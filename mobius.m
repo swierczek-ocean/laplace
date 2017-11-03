@@ -13,6 +13,27 @@ Contour2 = sigma + 1i.*unifrnd(-R,R,m,1);
 
     figure
     plot(X,'o','MarkerSize',5,'Color','red')
+    title('Complex Plane with Singularities')
+    xlabel('Real Part')
+    ylabel('Imaginary Part')
+    print('Complex1','-djpeg')
+    
+    figure
+    plot(Contour1,'o','MarkerSize',5,'Color','blue')
+    title('Complex Plane with Contour Sampled Near Sigma + 0i')
+    xlabel('Real Part')
+    ylabel('Imaginary Part')
+    print('Complex2','-djpeg')   
+    
+    figure
+    plot(Contour2,'o','MarkerSize',5,'Color','green')
+    title('Complex Plane with Contour Sampled Uniformly')
+    xlabel('Real Part')
+    ylabel('Imaginary Part')
+    print('Complex3','-djpeg')
+    
+    figure
+    plot(X,'o','MarkerSize',5,'Color','red')
     hold on
     plot(Contour1,'o','MarkerSize',5,'Color','blue')
     plot(Contour2,'o','MarkerSize',5,'Color','green')
@@ -20,6 +41,7 @@ Contour2 = sigma + 1i.*unifrnd(-R,R,m,1);
     xlabel('Real Part')
     ylabel('Imaginary Part')
     print('Complex','-djpeg')
+    
 
 for i=1:s
     

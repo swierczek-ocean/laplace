@@ -29,6 +29,6 @@ end
    z2 = X(n);
    Output = sum + 0.5*deltax*(fun(z1) + fun(z2)); 
    
-toc()
+%toc()
 end
 

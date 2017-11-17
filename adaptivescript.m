@@ -1,16 +1,16 @@
-T=1:1:20;
+T=1:1:100;
+abcissa = 1./T;
+Estimate = zeros(1,100);
+
+
 
 True = dm6(T);
-abcissa = 10;
 
-Estimate = zeros(1,20);
-
-
-for i=1:20
-    fun = @(x)dml6(x).*exp(T(i).*x);
-    %Estimate(i) = integral(fun,abcissa-1i*50,abcissa+1i*50);
-    %Estimate(i) = contourint(100,abcissa,fun);
-    Estimate(i) = contourint2(-1,1,-1,1,.0005,fun);
+for i=1:100
+    fun = @(x)dml6(x).*exp(T(i).*x)./(2*pi*1i);
+    %Estimate(i) = integral(fun,abcissa(i)-1i*50,abcissa(i)+1i*50);
+    %Estimate(i) = contourint(500,abcissa(i),fun);
+    %Estimate(i) = contourint2(-1,1,-1,1,.0005,fun);
 end
 
 error = True-Estimate;

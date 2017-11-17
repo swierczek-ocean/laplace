@@ -13,6 +13,6 @@ for j=1:m
     sum = sum + 0.5*deltax*(fun(z1) + fun(z2));
 end
 
-toc()
+%toc()
 end
 

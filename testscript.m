@@ -50,6 +50,18 @@ error = True-WeeksEstimate;
 WeeksError(1,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
 
 
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
+
 % D&M fcn 5
 
 True = dm5(T);
@@ -84,6 +96,18 @@ error = True-WeeksEstimate;
 WeeksError(2,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
 
 
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
+
 % D&M fcn 6
 
 True = dm6(T);
@@ -117,6 +141,17 @@ BromError(3,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),max
 error = True-WeeksEstimate;
 WeeksError(3,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
 
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
 
 % D&M fcn 9
 
@@ -151,6 +186,17 @@ BromError(4,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),max
 error = True-WeeksEstimate;
 WeeksError(4,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
 
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
 
 % D&M fcn 10
 
@@ -185,6 +231,18 @@ BromError(5,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),max
 error = True-WeeksEstimate;
 WeeksError(5,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
 
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
+
 % D&M fcn 11
 
 True = dm11(T);
@@ -217,6 +275,18 @@ BromError(6,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),max
 
 error = True-WeeksEstimate;
 WeeksError(6,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
+
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
 
 % D&M fcn 12
 
@@ -251,6 +321,18 @@ BromError(7,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),max
 error = True-WeeksEstimate;
 WeeksError(7,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
 
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
+
 % D&M fcn 16
 
 True = dm16(T);
@@ -283,6 +365,18 @@ BromError(8,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),max
 
 error = True-WeeksEstimate;
 WeeksError(8,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
+
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+%plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','square trapez','Bromwich adapt','Weeks')
+hold off
 
 % A&V fcn 5
 
@@ -317,6 +411,18 @@ BromError(9,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),max
 error = True-WeeksEstimate;
 WeeksError(9,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
 
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
+
 % A&V fcn 10
 
 True = av10(T);
@@ -350,6 +456,18 @@ BromError(10,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),ma
 error = True-WeeksEstimate;
 WeeksError(10,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
 
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
+
 % A&V fcn 12
 
 True = av12(T);
@@ -382,6 +500,18 @@ BromError(11,:) = [sum(Bromtime),max(Bromtime),mean(abs(error)),norm(error,2),ma
 
 error = True-WeeksEstimate;
 WeeksError(11,:) = [sum(Weekstime),max(Weekstime),mean(abs(error)),norm(error,2),max(abs(error))];
+
+figure
+plot(T,True,'LineWidth',4,'Color','black')
+hold on
+plot(T,real(Wrap1Estimate),'o','MarkerSize',7,'Color','green')
+plot(T,real(Wrap2Estimate),'o','MarkerSize',7,'Color','cyan')
+plot(T,real(BromEstimate),'o','MarkerSize',7,'Color','red')
+plot(T,real(WeeksEstimate),'o','MarkerSize',7,'Color','blue')
+xlabel('time')
+ylabel('f(t)')
+legend('True f(t)','circular trapez','square trapez','Bromwich adapt','Weeks')
+hold off
 
 format long g
 

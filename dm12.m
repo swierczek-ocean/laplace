@@ -7,7 +7,7 @@ else
 end
 f = zeros(n,m);
 for i=1:sz
-f(i) = sin(sgn(T(i)));
+f(i) = square(T(i));
 end
 
 

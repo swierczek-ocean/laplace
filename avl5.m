@@ -8,6 +8,6 @@ else
 end
 F = zeros(n,m);
 for i=1:sz
-F(i) = (exp(-0.25/S(i)))/sqrt(S(i)*S(i)*S(i));
+F(i) = (exp(-0.25/S(i)))/(S(i)^(3/2));
 end
 

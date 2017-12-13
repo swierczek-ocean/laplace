@@ -8,6 +8,6 @@ else
 end
 F = zeros(n,m);
 for i=1:sz
-F(i) = 1/(S(i)*(1 + exp(-S(i))));
+F(i) = (1/S(i))*tanh(S(i)/2);
 end
 

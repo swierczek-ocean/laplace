@@ -8,6 +8,6 @@ else
 end
 F = zeros(n,m);
 for i=1:sz
-F(i) = (S(i)*S(i) -1)/((S(i)*S(i)+1)^2);
+F(i) = (S(i)^2 -1)/((S(i)^2 +1)^2);
 end
 

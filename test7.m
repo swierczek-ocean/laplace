@@ -7,7 +7,7 @@ cof = 0.5;
 bromerr = [];
 weekserr = [];
 b=0.8;
-T=2:2:100;
+T=2:2:200;
 num = max(size(T));
 sigma = cof./T.^ep;
 sigmaW = sigma;
@@ -34,14 +34,13 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 1')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM1','jpeg')
+print('DM1','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -50,15 +49,14 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 1 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM1error','jpeg')
+print('DM1error','-djpeg')
 hold off
 
 
@@ -79,14 +77,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 2')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM2','jpeg')
+%fullscreen
+print('DM2','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -95,15 +93,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 2 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM2error','jpeg')
+%fullscreen
+print('DM2error','-djpeg')
 hold off
 
 % D&M fcn 5
@@ -123,14 +121,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 5')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM5','jpeg')
+%fullscreen
+print('DM5','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -139,15 +137,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 5 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM5error','jpeg')
+%fullscreen
+print('DM5error','-djpeg')
 hold off
 
 % D&M fcn 6
@@ -167,14 +165,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 6')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM6','jpeg')
+%fullscreen
+print('DM6','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -183,15 +181,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 6 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM6error','jpeg')
+%fullscreen
+print('DM6error','-djpeg')
 hold off
 
 
@@ -212,14 +210,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 8')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM8','jpeg')
+%fullscreen
+print('DM8','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -228,15 +226,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 8 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM8error','jpeg')
+%fullscreen
+print('DM8error','-djpeg')
 hold off
 
 % D&M fcn 9
@@ -256,14 +254,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 9')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM9','jpeg')
+%fullscreen
+print('DM9','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -272,15 +270,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 9 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM9error','jpeg')
+%fullscreen
+print('DM9error','-djpeg')
 hold off
 
 % D&M fcn 10
@@ -300,14 +298,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 10')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM10','jpeg')
+%fullscreen
+print('DM10','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -316,15 +314,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 10 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM10error','jpeg')
+%fullscreen
+print('DM10error','-djpeg')
 hold off
 
 % D&M fcn 11
@@ -344,14 +342,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 11')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM11','jpeg')
+%fullscreen
+print('DM11','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -360,17 +358,18 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 11 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM11error','jpeg')
+%fullscreen
+print('DM11error','-djpeg')
 hold off
 
+close all
 
 % D&M fcn 13
 
@@ -389,14 +388,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 13')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM13','jpeg')
+%fullscreen
+print('DM13','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -405,15 +404,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 13 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM13error','jpeg')
+%fullscreen
+print('DM13error','-djpeg')
 hold off
 
 % D&M fcn 15
@@ -433,14 +432,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 15')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM15','jpeg')
+%fullscreen
+print('DM15','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -449,15 +448,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 15 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM15error','jpeg')
+%fullscreen
+print('DM15error','-djpeg')
 hold off
 
 % D&M fcn 16
@@ -477,14 +476,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 16')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('DM16','jpeg')
+%fullscreen
+print('DM16','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -493,15 +492,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('DM 16 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('DM16error','jpeg')
+%fullscreen
+print('DM16error','-djpeg')
 hold off
 
 % A&V fcn 5
@@ -521,14 +520,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('AV 5')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('AV5','jpeg')
+%fullscreen
+print('AV5','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -537,15 +536,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('AV 5 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('AV5error','jpeg')
+%fullscreen
+print('AV5error','-djpeg')
 hold off
 
 % A&V fcn 10
@@ -565,14 +564,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('AV 10')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('AV10','jpeg')
+%fullscreen
+print('AV10','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -581,17 +580,18 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('AV 10 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('AV10error','jpeg')
+%fullscreen
+print('AV10error','-djpeg')
 hold off
 
+close all
 
 % S fcn 1
 
@@ -610,14 +610,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 1')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT1','jpeg')
+%fullscreen
+print('ILT1','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -626,15 +626,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 1 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT1error','jpeg')
+%fullscreen
+print('ILT1error','-djpeg')
 hold off
 
 
@@ -655,14 +655,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 2')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT2','jpeg')
+%fullscreen
+print('ILT2','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -671,15 +671,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 2 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT2error','jpeg')
+%fullscreen
+print('ILT2error','-djpeg')
 hold off
 
 
@@ -700,14 +700,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 3')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT3','jpeg')
+%fullscreen
+print('ILT3','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -716,15 +716,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 3 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT3error','jpeg')
+%fullscreen
+print('ILT3error','-djpeg')
 hold off
 
 
@@ -745,14 +745,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 4')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT4','jpeg')
+%fullscreen
+print('ILT4','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -761,15 +761,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 4 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT4error','jpeg')
+%fullscreen
+print('ILT4error','-djpeg')
 hold off
 
 
@@ -790,14 +790,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 5')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT5','jpeg')
+%fullscreen
+print('ILT5','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -806,15 +806,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 5 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT5error','jpeg')
+%fullscreen
+print('ILT5error','-djpeg')
 hold off
 
 
@@ -835,14 +835,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 12')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT12','jpeg')
+%fullscreen
+print('ILT12','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -851,17 +851,18 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 12 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT12error','jpeg')
+%fullscreen
+print('ILT12error','-djpeg')
 hold off
 
+close all
 
 % S fcn 13
 
@@ -880,14 +881,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 13')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT13','jpeg')
+%fullscreen
+print('ILT13','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -896,15 +897,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 13 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT13error','jpeg')
+%fullscreen
+print('ILT13error','-djpeg')
 hold off
 
 
@@ -925,14 +926,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 14')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT14','jpeg')
+%fullscreen
+print('ILT14','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -941,15 +942,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 14 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT14error','jpeg')
+%fullscreen
+print('ILT14error','-djpeg')
 hold off
 
 
@@ -970,14 +971,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 15')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT15','jpeg')
+%fullscreen
+print('ILT15','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -986,15 +987,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 15 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT5error','jpeg')
+%fullscreen
+print('ILT5error','-djpeg')
 hold off
 
 
@@ -1015,14 +1016,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 16')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT16','jpeg')
+%fullscreen
+print('ILT16','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1031,15 +1032,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 16 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT16error','jpeg')
+%fullscreen
+print('ILT16error','-djpeg')
 hold off
 
 % S fcn 17
@@ -1059,14 +1060,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 17')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT17','jpeg')
+%fullscreen
+print('ILT17','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1075,17 +1076,18 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 17 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT17error','jpeg')
+%fullscreen
+print('ILT17error','-djpeg')
 hold off
 
+close all
 
 % S fcn 18
 
@@ -1104,14 +1106,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 18')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT18','jpeg')
+%fullscreen
+print('ILT18','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1120,15 +1122,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 18 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT18error','jpeg')
+%fullscreen
+print('ILT18error','-djpeg')
 hold off
 
 
@@ -1149,14 +1151,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 19')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT19','jpeg')
+%fullscreen
+print('ILT19','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1165,15 +1167,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 19 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT19error','jpeg')
+%fullscreen
+print('ILT19error','-djpeg')
 hold off
 
 
@@ -1194,14 +1196,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 20')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT20','jpeg')
+%fullscreen
+print('ILT20','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1210,15 +1212,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 20 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT20error','jpeg')
+%fullscreen
+print('ILT20error','-djpeg')
 hold off
 
 
@@ -1239,14 +1241,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 26')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT26','jpeg')
+%fullscreen
+print('ILT26','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1255,15 +1257,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 26 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT26error','jpeg')
+%fullscreen
+print('ILT26error','-djpeg')
 hold off
 
 % S fcn 27
@@ -1283,14 +1285,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 27')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT27','jpeg')
+%fullscreen
+print('ILT27','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1299,15 +1301,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 27 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT27error','jpeg')
+%fullscreen
+print('ILT27error','-djpeg')
 hold off
 
 % S fcn 28
@@ -1327,14 +1329,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 28')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT28','jpeg')
+%fullscreen
+print('ILT28','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1343,21 +1345,21 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 28 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT28error','jpeg')
+%fullscreen
+print('ILT28error','-djpeg')
 hold off
 
 
 % S fcn 29
 
-True = ilapt20(T);
+True = ilapt29(T);
 
 for i=1:num
     fun = 'lapt29(s)';
@@ -1372,14 +1374,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 29')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT29','jpeg')
+%fullscreen
+print('ILT29','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1388,15 +1390,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 29 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT29error','jpeg')
+%fullscreen
+print('ILT29error','-djpeg')
 hold off
 
 
@@ -1417,14 +1419,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 30')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT30','jpeg')
+%fullscreen
+print('ILT30','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1433,15 +1435,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 30 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT30error','jpeg')
+%fullscreen
+print('ILT30error','-djpeg')
 hold off
 
 
@@ -1462,14 +1464,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 31')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT31','jpeg')
+%fullscreen
+print('ILT31','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1478,15 +1480,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 31 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT31error','jpeg')
+%fullscreen
+print('ILT31error','-djpeg')
 hold off
 
 % S fcn 32
@@ -1506,14 +1508,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 32')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT32','jpeg')
+%fullscreen
+print('ILT32','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1522,15 +1524,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 32 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT32error','jpeg')
+%fullscreen
+print('ILT32error','-djpeg')
 hold off
 
 % S fcn 33
@@ -1550,14 +1552,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 33')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT33','jpeg')
+%fullscreen
+print('ILT33','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1566,15 +1568,15 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 33 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT33error','jpeg')
+%fullscreen
+print('ILT33error','-djpeg')
 hold off
 
 
@@ -1595,14 +1597,14 @@ end
 figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
-plot(T,real(BromEstimate),'o','MarkerSize',7,'Color',Color(:,22))
-plot(T,real(WeeksEstimate),'*','MarkerSize',7,'Color',Color(:,12))
+plot(T,real(BromEstimate),'+','MarkerSize',8,'Color',Color(:,9))
+plot(T,real(WeeksEstimate),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 34')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt','Weeks')
-fullscreen()
-print('ILT34','jpeg')
+%fullscreen
+print('ILT34','-djpeg')
 hold off
 
 WeeksRelError = abs(WeeksEstimate-True)./abs(True);
@@ -1611,20 +1613,20 @@ bromerr = [bromerr,mean(BromRelError)];
 weekserr = [weekserr,mean(WeeksRelError)];
 
 figure
-semilogy(T,real(BromRelError),'o','MarkerSize',7,'Color',Color(:,22))
+semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
 hold on
-semilogy(T,real(WeeksRelError),'*','MarkerSize',7,'Color',Color(:,12))
+semilogy(T,real(WeeksRelError),'*','MarkerSize',8,'Color',Color(:,12))
 title('ILT 34 Error')
 xlabel('time')
 ylabel('f(t)')
 legend('Bromwich error','Weeks error')
-fullscreen()
-print('ILT34error','jpeg')
+%fullscreen
+print('ILT34error','-djpeg')
 hold off
 
 
 
-
+close all
 
 
 bromerr = bromerr

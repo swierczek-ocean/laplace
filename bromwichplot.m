@@ -8,17 +8,18 @@ y = @(x)sqrt(a^2-(x-c)^2);
 D = linspace(-a,a,2*n)';
 
 X = linspace(c-a,c,n)';
-Y1 = zeros(n,1);
-Y2 = zeros(n,1);
-
-for i=1:n
-    Y1(i) = y(X(i));
-    Y2(i) = -y(X(i));
-end
+% Y1 = zeros(n,1);
+% Y2 = zeros(n,1);
+% 
+% for i=1:n
+%     Y1(i) = y(X(i));
+%     Y2(i) = -y(X(i));
+% end
 
 C = c.*ones(2*n,1);
 
-V = [C,D;X,Y1;X,Y2];
+% V = [C,D;X,Y1;X,Y2];
+V = [C,D];
 
 sing = 5;
 
@@ -40,7 +41,7 @@ title('Bromwich Contour')
 xlabel('real part s')
 ylabel('imaginary part s')
 legend([h1(1),h2(1)],'contour','singularities of F(s)')
-print('bromwich','-djpeg')
+print('bromwicha','-djpeg')
 hold off
 
 

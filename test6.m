@@ -1,5 +1,5 @@
 tic()
-set(0,'DefaultFigureVisible','off')
+set(0,'DefaultFigureVisible','on')
 B = 20;
 ep = 2;
 cof = 0.5;
@@ -9,11 +9,14 @@ weeksmean = [];
 a=1;
 
 tic()
-T=51.3:10:301.3;
+T=0.01;
 num = max(size(T));
 sigma = cof./T.^ep;
 sigmaW = cof./T;
-b = B;
+
+% sigma = ones(num);
+% sigmaW = sigma;
+b=0.5;
 
 BromError = [];
 WeeksError = [];
@@ -31,9 +34,9 @@ True = ilapt1(T);
 
 for i=1:num
     fun = @(y)lapt1(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt1(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -68,9 +71,9 @@ True = ilapt2(T);
 
 for i=1:num
     fun = @(y)lapt2(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt2(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -104,9 +107,9 @@ True = ilapt3(T);
 
 for i=1:num
     fun = @(y)lapt3(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt3(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -140,9 +143,9 @@ True = ilapt4(T);
 
 for i=1:num
     fun = @(y)lapt4(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt4(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -176,9 +179,9 @@ True = ilapt5(T);
 
 for i=1:num
     fun = @(y)lapt5(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-11);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-11);
     fun = 'lapt5(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -213,9 +216,9 @@ True = ilapt7(T);
 
 for i=1:num
     fun = @(y)lapt7(a+ sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt7(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -250,9 +253,9 @@ True = ilapt8(T);
 
 for i=1:num
     fun = @(y)lapt8(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt8(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+ sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+ sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -286,9 +289,9 @@ True = ilapt9(T);
 
 for i=1:num
     fun = @(y)lapt9(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt9(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -322,9 +325,9 @@ True = ilapt10(T);
 
 for i=1:num
     fun = @(y)lapt10(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt10(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -358,9 +361,9 @@ True = ilapt11(T);
 
 for i=1:num
     fun = @(y)lapt11(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-11);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-11);
     fun = 'lapt11(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -395,9 +398,9 @@ True = ilapt12(T);
 
 for i=1:num
     fun = @(y)lapt12(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt12(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -432,9 +435,9 @@ True = ilapt13(T);
 
 for i=1:num
     fun = @(y)lapt13(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt13(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -468,9 +471,9 @@ True = ilapt14(T);
 
 for i=1:num
     fun = @(y)lapt14(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt14(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -504,9 +507,9 @@ True = ilapt15(T);
 
 for i=1:num
     fun = @(y)lapt15(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt15(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -540,9 +543,9 @@ True = ilapt16(T);
 
 for i=1:num
     fun = @(y)lapt16(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-11);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-11);
     fun = 'lapt16(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -577,9 +580,9 @@ True = ilapt17(T);
 
 for i=1:num
     fun = @(y)lapt17(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt17(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -614,9 +617,9 @@ True = ilapt18(T);
 
 for i=1:num
     fun = @(y)lapt18(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt18(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -650,9 +653,9 @@ True = ilapt19(T);
 
 for i=1:num
     fun = @(y)lapt19(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt19(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -686,9 +689,9 @@ True = ilapt20(T);
 
 for i=1:num
     fun = @(y)lapt20(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt20(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -722,9 +725,9 @@ True = ilapt21(T);
 
 for i=1:num
     fun = @(y)lapt21(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-11);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-11);
     fun = 'lapt21(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -759,9 +762,9 @@ True = ilapt22(T);
 
 for i=1:num
     fun = @(y)lapt22(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt22(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -796,9 +799,9 @@ True = ilapt23(T);
 
 for i=1:num
     fun = @(y)lapt23(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt23(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -832,9 +835,9 @@ True = ilapt24(T);
 
 for i=1:num
     fun = @(y)lapt24(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt24(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -868,9 +871,9 @@ True = ilapt25(T);
 
 for i=1:num
     fun = @(y)lapt25(a+sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt25(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,a+sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -904,9 +907,9 @@ True = ilapt26(T);
 
 for i=1:num
     fun = @(y)lapt26(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-11);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-11);
     fun = 'lapt26(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -941,9 +944,9 @@ True = ilapt27(T);
 
 for i=1:num
     fun = @(y)lapt27(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt27(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -978,9 +981,9 @@ True = ilapt28(T);
 
 for i=1:num
     fun = @(y)lapt28(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt28(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -1014,9 +1017,9 @@ True = ilapt29(T);
 
 for i=1:num
     fun = @(y)lapt29(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt29(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -1050,9 +1053,9 @@ True = ilapt30(T);
 
 for i=1:num
     fun = @(y)lapt30(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt30(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -1086,9 +1089,9 @@ True = ilapt31(T);
 
 for i=1:num
     fun = @(y)lapt31(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-11);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-11);
     fun = 'lapt31(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -1123,9 +1126,9 @@ True = ilapt32(T);
 
 for i=1:num
     fun = @(y)lapt32(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt32(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -1160,9 +1163,9 @@ True = ilapt33(T);
 
 for i=1:num
     fun = @(y)lapt33(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt33(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -1196,9 +1199,9 @@ True = ilapt34(T);
 
 for i=1:num
     fun = @(y)lapt34(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt34(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;
@@ -1232,9 +1235,9 @@ True = ilapt35(T);
 
 for i=1:num
     fun = @(y)lapt35(sigma(i)+1i*y).*fmint(y,sigma(i),T(i));
-    BromEstimate(i) = integral(fun,-b,b,'AbsTol',1e-16);
+    BromEstimate(i) = integral(fun,-B,B,'AbsTol',1e-16);
     fun = 'lapt35(s)';
-    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),0.5);
+    WeeksEstimate(i) = wfnWeeksCoreSigmab(fun,T(i),512,sigmaW(i),b);
 end
 
 error = True-BromEstimate;

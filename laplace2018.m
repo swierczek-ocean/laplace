@@ -2,27 +2,20 @@ clc
 close all
 clear
 
+t = 1:100;
 
-fun = @(x)1/(x^2-9)^2;
+fun = @(s)1/(s-9)^2;
 
-syms x
+fun3 = @(t)t.*exp(9.*t);
 
-poles(fun,x)
+ans = fun3(t);
 
-fun2 = @(x)1/fun(x);
+f = nabilt(fun,t);
 
-fzero(fun2,2.999)
-
-vpasolve(fun2(x) == 0, x)
-
-
-
-
-
-
-
-
-
+plot(t,f)
+hold on
+plot(t,ans)
+hold off
 
 
 

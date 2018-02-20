@@ -28,7 +28,7 @@ for j=1:jmax
     Bromtime = zeros(1,num);
     Weekstime = zeros(1,num);
     
-    %% D&M fcn 1
+    % D&M fcn 1
     
     True = dm1(T);
     

@@ -41,6 +41,8 @@ title('Bromwich Contour')
 xlabel('real part s')
 ylabel('imaginary part s')
 legend([h1(1),h2(1)],'contour','singularities of F(s)')
+
+fullscreen()
 print('bromwicha','-djpeg')
 hold off
 

@@ -1,20 +1,21 @@
 clc
 close all
 clear
+format long 
 
-t = 1:100;
+t = 1:3;
 
-fun = @(s)1/(s-9)^2;
+fun = @(s)1./(s).^2;
 
-fun3 = @(t)t.*exp(9.*t);
+fun6 = @(t)(t>0);
 
-ans = fun3(t);
+tf = fun6(t)
 
-f = nabilt(fun,t);
+f = nabilt(fun,t)
 
 plot(t,f)
 hold on
-plot(t,ans)
+plot(t,tf)
 hold off
 
 

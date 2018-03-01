@@ -1,5 +1,5 @@
-function f = ilapt1(T)
+function f = ilapt1(T,a)
 [n,m]=size(T);
-f = ones(n,m);
+f = exp(a.*T);
 end
 

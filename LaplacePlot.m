@@ -1,4 +1,4 @@
-function LaplacePlot(True,NAB,T)
+function LaplacePlot(True,NAB,T,char)
 colors
 
 figure
@@ -9,7 +9,7 @@ title('L 1')
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt')
-print('L1','-djpeg')
+print(['L',num2str(char)],'-djpeg')
 hold off
 
 BromRelError = abs(NAB-True)./abs(True);
@@ -20,6 +20,7 @@ title('L 1 Error')
 xlabel('time')
 ylabel('Relative error')
 print('L1error','-djpeg')
+print(['L',num2str(char),'error'],'-djpeg')
 hold off
 
 end

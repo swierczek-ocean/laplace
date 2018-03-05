@@ -14,7 +14,11 @@ Z = vpasolve(fun1(s) == 0, s);
 S = [P;Z];
 S = real(S);
 S = sort(S,'descend');
-shift = S(1);
+if(isempty(S)==1)
+    shift = 0;
+else
+    shift = S(1);
+end
 %%
 
 %% elementary transformation

@@ -288,6 +288,104 @@ NAB = nabilt(fun,t);
 LaplacePlot(True,NAB,t,39)
 %%
 
+%% test 40
+True = ilapt40(t,a);
+fun = @(x)lapt40(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,40)
+%%
+
+%% test 41
+True = ilapt41(t,a);
+fun = @(x)lapt41(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,41)
+%%
+
+%% test 42
+True = ilapt42(t,a);
+fun = @(x)lapt42(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,42)
+%%
+
+%% test 43
+True = ilapt43(t,a);
+fun = @(x)lapt43(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,43)
+%%
+
+%% test 44
+True = ilapt44(t,a);
+fun = @(x)lapt44(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,44)
+%%
+
+%% test 45
+True = ilapt45(t,a);
+fun = @(x)lapt45(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,45)
+%%
+
+%% test 46
+True = ilapt46(t,a);
+fun = @(x)lapt46(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,46)
+%%
+
+%% test 47
+True = ilapt47(t,a);
+fun = @(x)lapt47(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,47)
+%%
+
+%% test 48
+True = ilapt48(t,a);
+fun = @(x)lapt48(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,48)
+%%
+
+%% test 49
+True = ilapt49(t,a);
+fun = @(x)lapt49(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,49)
+%%
+
+%% test 50
+True = ilapt50(t,a);
+fun = @(x)lapt50(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,50)
+%%
+
+%% test 51
+True = ilapt51(t,a);
+fun = @(x)lapt51(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,51)
+%%
+
+%% test 52
+True = ilapt52(t,a);
+fun = @(x)lapt52(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,52)
+%%
+
+%% test 53
+True = ilapt53(t,a);
+fun = @(x)lapt53(x,a);
+NAB = nabilt(fun,t);
+LaplacePlot(True,NAB,t,53)
+%%
+
 
 
 

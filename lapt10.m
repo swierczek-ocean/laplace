@@ -1,13 +1,4 @@
-function F = lapt10(s)
-% sing @ s = a
-[n,m]=size(s);
-if(n>m)
-    sz=n;
-else
-    sz=m;
-end
-F = zeros(n,m);
-for i=1:sz
-F(i) = 1/(s(i)-1)^4;
+function F = lapt10(s,a)
+F = 1./(s.^2 +a^2).^2;
 end
 

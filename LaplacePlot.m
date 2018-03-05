@@ -5,7 +5,7 @@ figure
 plot(T,True,'LineWidth',3,'Color','black')
 hold on
 plot(T,NAB,'+','MarkerSize',8,'Color',Color(:,9))
-title('L 1')
+title(['L',num2str(char)])
 xlabel('time')
 ylabel('f(t)')
 legend('True f(t)','Bromwich adapt')
@@ -16,7 +16,7 @@ BromRelError = abs(NAB-True)./abs(True);
 
 figure
 semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))
-title('L 1 Error')
+title(['L',num2str(char),' error'])
 xlabel('time')
 ylabel('Relative error')
 print('L1error','-djpeg')

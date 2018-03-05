@@ -1,12 +1,4 @@
-function f = ilapt35(T)
-[n,m]=size(T);
-if(n>m)
-    sz=n;
-else
-    sz=m;
-end
-f = zeros(n,m);
-for i=1:sz
-f(i) = (1/6)*(T(i)^3)*cos(T(i));
+function f = ilapt35(T,a)
+f = ((8+a^2.*T.^2).*cosh(a.*T)+7*a.*T.*sinh(a.*T))./8;
 end
 

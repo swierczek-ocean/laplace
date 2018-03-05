@@ -1,12 +1,4 @@
-function f = ilapt34(T)
-[n,m]=size(T);
-if(n>m)
-    sz=n;
-else
-    sz=m;
-end
-f = zeros(n,m);
-for i=1:sz
-f(i) = (1/6)*(T(i)^3)*cos(T(i));
+function f = ilapt34(T,a)
+f = ((3+a^2.*T.^2).*sinh(a.*T)+5*a.*T.*cosh(a.*T))./(8*a);
 end
 

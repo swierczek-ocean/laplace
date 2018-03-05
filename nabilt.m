@@ -5,7 +5,6 @@ function [f] = nabilt(fun,t)
 % along a finite portion of the Browmich contour
 % after translating the function to have its rightmost
 % singularity to have real part zero
-tic()
 
 %% find the singularities
 syms s
@@ -24,7 +23,7 @@ fun2 = @(x)fun(x+shift);
 %% loop calculation
 [n,m] = size(t);
 f = zeros(n,m);
-ub = 100;
+ub = 10;
 
 for ii=1:n
     for jj=1:m
@@ -38,6 +37,5 @@ end
 
 f = double(exp(shift.*t).*f);
 
-toc()
 end
 

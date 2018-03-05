@@ -1,12 +1,4 @@
-function f = ilapt23(T)
-[n,m]=size(T);
-if(n>m)
-    sz=n;
-else
-    sz=m;
-end
-f = zeros(n,m);
-for i=1:sz
-f(i) = 0.5*(sinh(T(i))+T(i)*cosh(T(i)));
+function f = ilapt23(T,a)
+f = (3.*T.*sin(a.*T) + a.*T.^2.*cos(a.*T))/(8*a);
 end
 

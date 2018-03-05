@@ -1,12 +1,4 @@
-function f = ilapt18(T)
-[n,m]=size(T);
-if(n>m)
-    sz=n;
-else
-    sz=m;
-end
-f = zeros(n,m);
-for i=1:sz
-f(i) = (sin(T(i))+T(i)*cos(T(i)))/2;
+function f = ilapt18(T,a)
+f = cosh(a.*T) + 0.5*a.*T.*sinh(a.*T);
 end
 

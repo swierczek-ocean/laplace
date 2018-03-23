@@ -1,4 +1,4 @@
-function LaplacePlot(True,NAB,T,char)
+function error = LaplacePlot(True,NAB,T,char)
 colors
 
 Q = sort(True);
@@ -32,6 +32,7 @@ else
 end
 
 BromRelError = abs(NAB-True)./abs(True);
+error = mean(BromRelError);
 
 figure
 semilogy(T,real(BromRelError),'+','MarkerSize',8,'Color',Color(:,9))

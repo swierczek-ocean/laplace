@@ -1,4 +1,4 @@
-function [f] = nabilt(fun,t)
+function [f] = nabilt(fun,t,ub)
 
 %% Naive Adaptive Bromwich Contour
 % calculates inverse Laplace transform by numerical integration
@@ -27,7 +27,6 @@ fun2 = @(x)fun(x+shift);
 %% loop calculation
 [n,m] = size(t);
 f = zeros(n,m);
-ub = 10;
 
 for ii=1:n
     for jj=1:m

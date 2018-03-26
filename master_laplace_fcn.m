@@ -164,27 +164,27 @@ elseif(jj==78)
 elseif(jj==79)
     F = exp(-a./s)./(s.^4);
 elseif(jj==80)
-    
+    F = exp(-a.*sqrt(s))./sqrt(s);
 elseif(jj==81)
-    
+    F = exp(-a.*sqrt(s));
 elseif(jj==82)
-    
+    F = (1-exp(-a.*sqrt(s)))./s;
 elseif(jj==83)
-    
+    F = exp(-a.*sqrt(s))./s;
 elseif(jj==84)
-    
+    F = exp(-a./sqrt(s))./s;
 elseif(jj==85)
-
+    F = exp(-a./sqrt(s))./(s.^2);
 elseif(jj==86)
-    
+    F = exp(-a./sqrt(s))./(s.^3);
 elseif(jj==87)
-    
+    F = exp(-a./sqrt(s))./(s.^4);
 elseif(jj==88)
-    
+    F = exp(-a./sqrt(s))./(s.^5);
 elseif(jj==89)
-    
+    F = 0.5.*log((s.^2+a^2)/(a^2))./s;
 elseif(jj==90)
-    
+    F = log((s+a)./a)./s;
 elseif(jj==91)
     
 elseif(jj==92)

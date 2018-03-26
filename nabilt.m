@@ -34,7 +34,7 @@ for ii=1:n
         sigma = 0.5/T^2;
         fun3 = @(x)(fun2(sigma + 1i.*x).*iltint(x,sigma,T));
         fun4 = @(x)double(fun3(x));
-        f(ii,jj) = real(exp(sigma*T)*integral(fun4,-ub,ub)/2/pi);
+        f(ii,jj) = real(exp(sigma*T)*integral(fun4,-ub,ub,'AbsTol',1e-13)/2/pi);
     end
 end
 

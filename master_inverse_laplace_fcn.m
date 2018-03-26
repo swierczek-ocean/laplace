@@ -177,27 +177,32 @@ elseif(jj==78)
 elseif(jj==79)
     f = (T./a).^2.*besselj(3,2.*sqrt(a.*T));
 elseif(jj==80)
-    
+    f = exp(-a^2./(4.*T))./(sqrt(pi.*T));
 elseif(jj==81)
-    
+    f = a.*exp(-a^2./(4.*T))./(2.*sqrt(pi.*T.^3));
 elseif(jj==82)
-    
+    f = erf(a./(2.*sqrt(T)));
 elseif(jj==83)
-    
+    f = erfc(a./(2.*sqrt(T)));
 elseif(jj==84)
-    
+    funk = @(u)kern84(u,a,T,0);
+    f = integral(funk,0,Inf)./(a.*sqrt(pi.*T));
 elseif(jj==85)
-
+    funk = @(u)kern84(u,a,T,1);
+    f = integral(funk,0,Inf)./((a^3).*sqrt(pi.*T));
 elseif(jj==86)
-    
+    funk = @(u)kern84(u,a,T,2);
+    f = integral(funk,0,Inf)./((a^5).*sqrt(pi.*T));    
 elseif(jj==87)
-    
+    funk = @(u)kern84(u,a,T,3);
+    f = integral(funk,0,Inf)./((a^7).*sqrt(pi.*T));    
 elseif(jj==88)
-    
+    funk = @(u)kern84(u,a,T,4);
+    f = integral(funk,0,Inf)./((a^9).*sqrt(pi.*T));    
 elseif(jj==89)
-    
+    f = -cosint(a.*T);
 elseif(jj==90)
-    
+    f = expint(a.*T);
 elseif(jj==91)
     
 elseif(jj==92)

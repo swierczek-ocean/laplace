@@ -170,13 +170,13 @@ elseif(jj==74)
 elseif(jj==75)
     f = sin(2.*sqrt(a.*T))./sqrt(pi*a);
 elseif(jj==76)
-    f = sqrt(T./a).*besselj(0,2.*sqrt(a.*T));
+    f = besselj(0,2.*sqrt(a.*T));
 elseif(jj==77)
-    f = (T./a).*besselj(1,2.*sqrt(a.*T));
+    f = sqrt(T./a).*besselj(1,2.*sqrt(a.*T));
 elseif(jj==78)
-    f = (T./a).^(3/2).*besselj(2,2.*sqrt(a.*T));
+    f = (T./a).*besselj(2,2.*sqrt(a.*T));
 elseif(jj==79)
-    f = (T./a).^2.*besselj(3,2.*sqrt(a.*T));
+    f = (T./a).^(3/2).*besselj(3,2.*sqrt(a.*T));
 elseif(jj==80)
     f = exp(-a^2./(4.*T))./(sqrt(pi.*T));
 elseif(jj==81)

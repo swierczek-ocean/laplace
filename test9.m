@@ -12,10 +12,10 @@ colors
 a = 10;
 b = 2;
 eps = 0.5;
-t = 1.5:149.5;
+t = 1.5:0.75:75;
 ub = 100;
 start = 1;
-num_test = 100;
+num_test = 84;
 error = zeros(num_test-start+1,2);
 %%
 

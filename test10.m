@@ -15,7 +15,7 @@ eps = 0.5;
 t = 1.5:149.5;
 ub = 10;
 start = 1;
-num_test = 100;
+num_test = 83;
 error = zeros(num_test-start+1,2);
 %%
 

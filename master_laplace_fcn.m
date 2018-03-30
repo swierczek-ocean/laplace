@@ -100,9 +100,9 @@ elseif(jj==46)
 elseif(jj==47)
     F = s./(s.^4+a^4);
 elseif(jj==48)
-    F = s.^2./(s.^4+a^4);
+    F = s.^2./(s.^4+4*a^4);
 elseif(jj==49)
-    F = s.^3./(s.^4+a^4);
+    F = s.^3./(s.^4+4*a^4);
 elseif(jj==50)
     F = 1./(s.^4-a^4);
 elseif(jj==51)

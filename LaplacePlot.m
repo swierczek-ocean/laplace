@@ -31,7 +31,9 @@ else
     
 end
 
+ind = find(True==0);
 BromRelError = abs(NAB-True)./abs(True);
+BromRelError(ind) = abs(NAB(ind)-True(ind));
 error = mean(BromRelError);
 
 figure

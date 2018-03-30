@@ -212,11 +212,11 @@ elseif(jj==99)
 elseif(jj==100)
     F = atan(a./s)./s;
 elseif(jj==101)
-    F = exp(a./s).*erfc(sqrt(a./s))./sqrt(s);
+    F = erfcx(sqrt(a./s))./sqrt(s);
 elseif(jj==102)
-    F = exp((s.^2)./(4*a*a)).*erfc(s./(2*a));
+    F = erfcx(s./(2*a));
 elseif(jj==103)
-    F = exp((s.^2)./(4*a*a)).*erfc(s./(2*a))./s;
+    F = erfcx(s./(2*a))./s;
 elseif(jj==104)
     F = exp(a.*s).*erfc(s./(2*a))./sqrt(s);
 elseif(jj==105)

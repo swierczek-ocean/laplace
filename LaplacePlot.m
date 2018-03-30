@@ -3,29 +3,29 @@ colors
 
 Q = sort(True);
 
-if(Q(end)-Q(1)>1e5)
+if(Q(end)-Q(1)>1e5)&&(Q(1)>0)
     
     figure
-    semilogy(T,True,'LineWidth',2.5,'Color',Color(:,11))
+    h1 = semilogy(T,True,'LineWidth',2.5,'Color',Color(:,11));
     hold on
-    semilogy(T,NAB,'*','MarkerSize',7,'Color',Color(:,12))
+    h2 = semilogy(T,NAB,'*','MarkerSize',7,'Color',Color(:,12));
     title(['L',num2str(char),' cl=',num2str(2*ub)])
     xlabel('time')
     ylabel('f(t)')
-    legend('True f(t)','Bromwich adapt')
+    legend([h1(1),h2(1)],'True f(t)','Bromwich adapt')
     print(['L',num2str(char),' cl=',num2str(2*ub)],'-djpeg')
     hold off
     
 else
     
     figure
-    plot(T,True,'LineWidth',2.5,'Color',Color(:,11))
+    h1 = plot(T,True,'LineWidth',2.5,'Color',Color(:,11));
     hold on
-    plot(T,NAB,'*','MarkerSize',7,'Color',Color(:,12))
+    h2 = plot(T,NAB,'*','MarkerSize',7,'Color',Color(:,12));
     title(['L',num2str(char),' cl=',num2str(2*ub)])
     xlabel('time')
     ylabel('f(t)')
-    legend('True f(t)','Bromwich adapt')
+    legend([h1(1),h2(1)],'True f(t)','Bromwich adapt')
     print(['L',num2str(char),' cl=',num2str(2*ub)],'-djpeg')
     hold off
     

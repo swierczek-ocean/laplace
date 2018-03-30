@@ -186,20 +186,56 @@ elseif(jj==82)
 elseif(jj==83)
     f = erfc(a./(2.*sqrt(T)));
 elseif(jj==84)
-    funk = @(u)kern84(u,a,T,0);
-    f = integral(funk,0,Inf)./(a.*sqrt(pi.*T));
+    %     funk = @(u)kern84(u,a,T,0);
+    %     f = integral(funk,0,Inf)./(a.*sqrt(pi.*T));
+    
+    [kk,ll] = size(T);
+    for ii=1:kk
+        for bb=1:ll
+            funk = @(u)kern84(u,a,T(ii,bb),0);
+            f = integral(funk,0,Inf)./(a.*sqrt(pi.*T(ii,bb)));
+        end
+    end
 elseif(jj==85)
-    funk = @(u)kern84(u,a,T,1);
-    f = integral(funk,0,Inf)./((a^3).*sqrt(pi.*T));
+    %     funk = @(u)kern84(u,a,T,1);
+    %     f = integral(funk,0,Inf)./((a^3).*sqrt(pi.*T));
+    [kk,ll] = size(T);
+    for ii=1:kk
+        for bb=1:ll
+            funk = @(u)kern84(u,a,T(ii,bb),1);
+            f = integral(funk,0,Inf)./((a^3).*sqrt(pi.*T(ii,bb)));
+        end
+    end
 elseif(jj==86)
-    funk = @(u)kern84(u,a,T,2);
-    f = integral(funk,0,Inf)./((a^5).*sqrt(pi.*T));    
+    %     funk = @(u)kern84(u,a,T,2);
+    %     f = integral(funk,0,Inf)./((a^5).*sqrt(pi.*T));
+    [kk,ll] = size(T);
+    for ii=1:kk
+        for bb=1:ll
+            funk = @(u)kern84(u,a,T(ii,bb),2);
+            f = integral(funk,0,Inf)./((a^5).*sqrt(pi.*T(ii,bb)));
+        end
+    end
 elseif(jj==87)
-    funk = @(u)kern84(u,a,T,3);
-    f = integral(funk,0,Inf)./((a^7).*sqrt(pi.*T));    
+    %     funk = @(u)kern84(u,a,T,3);
+    %     f = integral(funk,0,Inf)./((a^7).*sqrt(pi.*T));
+    [kk,ll] = size(T);
+    for ii=1:kk
+        for bb=1:ll
+            funk = @(u)kern84(u,a,T(ii,bb),3);
+            f = integral(funk,0,Inf)./((a^7).*sqrt(pi.*T(ii,bb)));
+        end
+    end
 elseif(jj==88)
-    funk = @(u)kern84(u,a,T,4);
-    f = integral(funk,0,Inf)./((a^9).*sqrt(pi.*T));    
+    %     funk = @(u)kern84(u,a,T,4);
+    %     f = integral(funk,0,Inf)./((a^9).*sqrt(pi.*T));
+    [kk,ll] = size(T);
+    for ii=1:kk
+        for bb=1:ll
+            funk = @(u)kern84(u,a,T(ii,bb),4);
+            f = integral(funk,0,Inf)./((a^9).*sqrt(pi.*T(ii,bb)));
+        end
+    end
 elseif(jj==89)
     f = -cosint(a.*T);
 elseif(jj==90)

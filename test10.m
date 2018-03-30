@@ -13,7 +13,7 @@ a = 10;
 b = 2;
 eps = 0.5;
 t = 1.5:149.5;
-ub = 100;
+ub = 10;
 start = 1;
 num_test = 100;
 error = zeros(num_test-start+1,2);
@@ -33,6 +33,6 @@ fprintf('max relative error = %g percent\n',100*max(error(:,1)))
 fprintf('mean relative error = %g percent\n',100*mean(error(:,1)))
 %%
 
-save error100
+save error10
 
 toc()

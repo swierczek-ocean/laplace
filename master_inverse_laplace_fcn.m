@@ -1,9 +1,10 @@
-function f = master_inverse_laplace_fcn(T,a,b,jj)
+function f = master_inverse_laplace_fcn(T,a,b,jj,eps)
 %% description
 % index jj selects the jjth inverse laplace function.
 % the function is evaluated at times t
 % with parameter a and possible b
 %%
+ga = double(eulergamma);
 
 if(jj==1)
     f = exp(a.*T);
@@ -204,67 +205,88 @@ elseif(jj==89)
 elseif(jj==90)
     f = expint(a.*T);
 elseif(jj==91)
-    
+    f = log(T);
 elseif(jj==92)
-    
+    f = (log(T)).^2;
 elseif(jj==93)
-    
+    f = -(log(T)+ga);
 elseif(jj==94)
-
+    f = (log(T)+ga).^2 - pi*pi/6;
 elseif(jj==95)
-    
+    f = T.*log(T);
 elseif(jj==96)
-    
+    f = T.^2.*log(T);
 elseif(jj==97)
-    
+    f = T.^3.*log(T);
 elseif(jj==98)
-    
+    f = T.^4.*log(T);
 elseif(jj==99)
-    
+    f = sin(a.*T)./T;
 elseif(jj==100)
-    
+    f = sinint(a.*T);
 elseif(jj==101)
-    
+    f = exp(-2.*sqrt(a.*T))./sqrt(pi.*T);
 elseif(jj==102)
-    
+    f = 2*a.*exp(-a.^2.*T.^2)./sqrt(pi);
 elseif(jj==103)
-    
+    f = erf(a.*T);
 elseif(jj==104)
-    
+    f = 1./sqrt(pi.*T+pi*a);
 elseif(jj==105)
-
+    f = 1./(T+a);
 elseif(jj==106)
-    
+    f = 1./(T.^2+a^2);
 elseif(jj==107)
-    
+    f = T./(T.^2+a^2);
 elseif(jj==108)
-    
+    f = atan(T./a);
 elseif(jj==109)
-    
+    f = 0.5.*log((T.^2+a^2)./(a^2));
 elseif(jj==110)
-    
+    f = log((T.^2+a^2)./(a^2))./T;
 elseif(jj==111)
-    
+    f = dirac(T);
 elseif(jj==112)
-    
+    f = dirac(T-a);
 elseif(jj==113)
-    
+    f = heaviside(T-a);
 elseif(jj==114)
-
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:kk
+        for jj=1:ll
+            modt = mod(T(ii,jj),2*a);
+            if(modt>=a)
+                f(ii,jj)=(-1/a)*modt+2;
+            else
+                f(ii,jj)=(1/a)*modt;
+            end
+        end
+    end
 elseif(jj==115)
-    
+    f = sign(sin(pi.*T./a));
 elseif(jj==116)
-    
+    f = abs(sin(pi.*T./a));
 elseif(jj==117)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:kk
+        for jj=1:ll
+            if(mod(T(ii,jj),2*a)>=a)
+                f(ii,jj)=0;
+            else
+                f(ii,jj)=abs(sin(pi.*T./a));
+            end
+        end
+    end
 elseif(jj==118)
-    
+    f = 0.5.*(sawtooth(pi.*T./a)+1);
 elseif(jj==119)
-    
+    f = heaviside(T-a).*heaviside(a+eps-T);
 elseif(jj==120)
-    
+    f = ceil(T./a);
 elseif(jj==121)
-    
+    f = ceil(T./a).^2;
 elseif(jj==122)
     
 elseif(jj==123)

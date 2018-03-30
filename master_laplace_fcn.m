@@ -1,4 +1,4 @@
-function F = master_laplace_fcn(s,a,b,jj)
+function F = master_laplace_fcn(s,a,b,jj,eps)
 %% description
 % index jj selects the jjth laplace function.
 % the function is evaluated at complex frequencies s
@@ -186,67 +186,74 @@ elseif(jj==89)
 elseif(jj==90)
     F = log((s+a)./a)./s;
 elseif(jj==91)
-    
+    ga = double(eulergamma);
+    F = -(ga+log(s))./s;
 elseif(jj==92)
-    
+    ga = double(eulergamma);
+    F = (((pi^2)/6)./s)+((ga+log(s)).^2)./s;
 elseif(jj==93)
-    
+    F = log(s)./s;
 elseif(jj==94)
-
+    F = (log(s).^2)./s;
 elseif(jj==95)
-    
+    ga = double(eulergamma);
+    F = (1-ga-log(s))./(s.^2);
 elseif(jj==96)
-    
+    ga = double(eulergamma);
+    F = (3-2*ga-2.*log(s))./(s.^3);
 elseif(jj==97)
-    
+    ga = double(eulergamma);
+    F = (66-6*ga-6.*log(s))./(s.^4);
 elseif(jj==98)
-    
+    ga = double(eulergamma);
+    F = (50-24*ga-24.*log(s))./(s.^5);
 elseif(jj==99)
-    
+    F = atan(a./s);
 elseif(jj==100)
-    
+    F = atan(a./s)./s;
 elseif(jj==101)
-    
+    F = exp(a./s).*erfc(sqrt(a./s))./sqrt(s);
 elseif(jj==102)
-    
+    F = exp((s.^2)./(4*a*a)).*erfc(s./(2*a));
 elseif(jj==103)
-    
+    F = exp((s.^2)./(4*a*a)).*erfc(s./(2*a))./s;
 elseif(jj==104)
-    
+    F = exp(a.*s).*erfc(s./(2*a))./sqrt(s);
 elseif(jj==105)
-
+    F = exp(a.*s).*expint(a.*s);
 elseif(jj==106)
-    
+    F = (cos(a.*s).*(pi/2 - sinint(a.*s))-sin(a.*s).*(-cosint(a.*s)))./a;
 elseif(jj==107)
-    
+    F = sin(a.*s).*(pi/2 - sinint(a.*s))+cos(a.*s).*(-cosint(a.*s));
 elseif(jj==108)
-    
+    F = (sin(a.*s).*(pi/2 - sinint(a.*s))-sin(a.*s).*(-cosint(a.*s)))./s; 
 elseif(jj==109)
-    
+    F = (sin(a.*s).*(pi/2 - sinint(a.*s))+cos(a.*s).*(-cosint(a.*s)))./s;
 elseif(jj==110)
-    
+    F = (pi/2 - sinint(a.*s)).^2 + cosint(a.*s).^2;
 elseif(jj==111)
-    
+    [kk,ll]=size(s);
+    F = ones(kk,ll);
 elseif(jj==112)
-    
+    F = exp(-a.*s);
 elseif(jj==113)
-    
+    F = exp(-a.*s)./s;
 elseif(jj==114)
-
+    F = tanh(a.*2./2)./(a.*s.^2);
 elseif(jj==115)
-    
+    F = tanh(a.*s./2)./s;
 elseif(jj==116)
-    
+    F = (pi*a./(a^2.*s.^2 +pi^2)).*coth(a.*s./2);
 elseif(jj==117)
-    
+    F = (pi*a./(a^2.*s.^2 +pi^2))./(1-exp(-a.*s));
 elseif(jj==118)
-    
+    F = 1./(a.*s.^2) - exp(-a.*s)./(s.*(1-exp(-a.*s)));
 elseif(jj==119)
-    
+    F = exp(-a.*s).*(1-exp(-eps.*s))./s;
 elseif(jj==120)
-    
+    F = 1./(s.*(1-exp(-a.*s)));
 elseif(jj==121)
-    
+    F = (exp(-s)+exp(-2.*s))./(s.*(1-exp(-s)).^2);
 elseif(jj==122)
     
 elseif(jj==123)

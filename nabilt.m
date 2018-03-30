@@ -12,17 +12,19 @@ P = poles(fun,s);
 fun1 = @(s)1/fun(s);
 Z = vpasolve(fun1(s) == 0, s);
 S = [P;Z];
-S = real(S);
-S = sort(S,'descend');
-if(isempty(S)==1)
-    shift = 0;
+Q = real(S);
+[Q,I] = sort(Q,'descend');
+if(isempty(Q)==1)
+    hshift = 0;
+    vshift = 0;
 else
-    shift = S(1);
+    hshift = Q(1);
+    vshift = double(imag(S(I(1))));
 end
 %%
 
 %% elementary transformation
-fun2 = @(x)fun(x+shift);
+fun2 = @(x)fun(x+hshift);
 
 %% loop calculation
 [n,m] = size(t);
@@ -34,11 +36,11 @@ for ii=1:n
         sigma = 0.5/T^2;
         fun3 = @(x)(fun2(sigma + 1i.*x).*iltint(x,sigma,T));
         fun4 = @(x)double(fun3(x));
-        f(ii,jj) = real(exp(sigma*T)*integral(fun4,-ub,ub,'AbsTol',1e-13)/2/pi);
+        f(ii,jj) = real(exp(sigma*T)*integral(fun4,-ub+vshift,ub+vshift,'AbsTol',1e-13)/2/pi);
     end
 end
 
-f = double(exp(shift.*t).*f);
+f = double(exp(hshift.*t).*f);
 
 end
 

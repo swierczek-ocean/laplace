@@ -1,4 +1,4 @@
-function [f] = nabilt(fun,t,ub)
+function [f] = nabilt(fun,t,ub,jj,sw,Sings)
 
 %% Naive Adaptive Bromwich Contour
 % calculates inverse Laplace transform by numerical integration
@@ -7,21 +7,20 @@ function [f] = nabilt(fun,t,ub)
 % singularity to have real part zero
 
 %% find the singularities
-syms s
-P = poles(fun,s);
-fun1 = @(s)1/fun(s);
-Z = vpasolve(fun1(s) == 0, s);
-S = [P;Z];
-Q = real(S);
-[Q,I] = sort(Q,'descend');
-if(isempty(Q)==1)
-    hshift = 0;
-    vshift = 0;
+if(sw==1)
+    [hshift,vshift] = singfind(fun);
 else
-    hshift = Q(1);
-    vshift = double(imag(S(I(1))));
+    hshift = Sings(jj,1);
+    vshift = Sings(jj,2);
+    %[hshift,vshift] = Sings(jj,:);
 end
 %%
+
+%% test that prior part worked
+fprintf('horizontal shift = %g for function %g\n',hshift,jj)
+fprintf('vertical shift = %g for function %g\n',vshift,jj)
+%%
+
 
 %% elementary transformation
 fun2 = @(x)fun(x+hshift);

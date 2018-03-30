@@ -12,10 +12,12 @@ colors
 a = 10;
 b = 2;
 eps = 0.5;
-t = 1.5:9.5;
+Sings = makesings(a,b);
+t = 7:5:130;
 ub = 100;
-start = 40;
-num_test = 40;
+sw = 2;
+start = 48;
+num_test = 48;
 error = zeros(num_test-start+1,2);
 %%
 
@@ -23,7 +25,7 @@ error = zeros(num_test-start+1,2);
 for jj=start:num_test
     True = master_inverse_laplace_fcn(t,a,b,jj,eps);
     fun = @(x)master_laplace_fcn(x,a,b,jj,eps);
-    NAB = nabilt(fun,t,ub);
+    NAB = nabilt(fun,t,ub,jj,sw,Sings);
     error(jj-start+1,:) = [LaplacePlot(True,NAB,t,jj,ub),jj];
 end
 %%
@@ -33,6 +35,6 @@ fprintf('max relative error = %g percent\n',100*max(error(:,1)))
 fprintf('mean relative error = %g percent\n',100*mean(error(:,1)))
 %%
 
-save error100
+error
 
 toc()

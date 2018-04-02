@@ -157,9 +157,9 @@ elseif(jj==72)
     f = zeros(n,m);
     Tfloor = floor(T);
     for ii=1:n
-        for jj=1:m
-            for kk=1:Tfloor(ii,jj)
-                f(ii,jj) = f(ii,jj) + a^kk;
+        for ll=1:m
+            for kk=1:Tfloor(ii,ll)
+                f(ii,ll) = f(ii,ll) + a^kk;
             end
         end
     end

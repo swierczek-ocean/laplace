@@ -4,7 +4,7 @@ close all
 clear
 format long 
 tic()
-set(0,'DefaultFigureVisible','off')
+set(0,'DefaultFigureVisible','on')
 colors
 %%
 
@@ -13,11 +13,11 @@ a = 10;
 b = 2;
 eps = 0.5;
 Sings = makesings(a,b);
-t = 1.5:0.75:75;
-ub = 100;
+t = 1.5:pi/20:10;
+ub = 1000;
 sw = 2;
-start = 48;
-num_test = 48;
+start = 97;
+num_test = 97;
 error = zeros(num_test-start+1,2);
 %%
 

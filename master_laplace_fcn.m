@@ -148,7 +148,7 @@ elseif(jj==70)
 elseif(jj==71)
     F = s.^2./(s.^2-a^2).^(3/2);
 elseif(jj==72)
-    F = 1./(s.*(exp(s)-a));
+    F = a./(s.*(exp(s)-a));
 elseif(jj==73)
     F = (exp(s)-1)./(s.*(exp(s)-a));
 elseif(jj==74)
@@ -203,7 +203,7 @@ elseif(jj==96)
     F = (3-2*ga-2.*log(s))./(s.^3);
 elseif(jj==97)
     ga = double(eulergamma);
-    F = (66-6*ga-6.*log(s))./(s.^4);
+    F = (11-6*ga-6.*log(s))./(s.^4);
 elseif(jj==98)
     ga = double(eulergamma);
     F = (50-24*ga-24.*log(s))./(s.^5);

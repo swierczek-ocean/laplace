@@ -2,7 +2,7 @@ function f = master_inverse_laplace_fcn(T,a,b,jj,eps)
 %% description
 % index jj selects the jjth inverse laplace function.
 % the function is evaluated at times t
-% with parameter a and possible b
+% with parameter a and possibly b
 %%
 ga = double(eulergamma);
 
@@ -308,21 +308,19 @@ elseif(jj==117)
     f = zeros(kk,ll);
     for ii=1:kk
         for jj=1:ll
-            if(mod(T(ii,jj),2*a)>=a)
-                f(ii,jj)=0;
-            else
-                f(ii,jj)=abs(sin(pi.*T./a));
+            if(mod(T(ii,jj),2*a)<a)
+                f(ii,jj)=abs(sin(pi*T(ii,jj)/a));
             end
         end
     end
 elseif(jj==118)
-    f = 0.5.*(sawtooth(pi.*T./a)+1);
+    f = 0.5.*(sawtooth(2*pi.*T./a)+1);
 elseif(jj==119)
     f = heaviside(T-a).*heaviside(a+eps-T);
 elseif(jj==120)
     f = ceil(T./a);
 elseif(jj==121)
-    f = ceil(T./a).^2;
+    f = floor(T).^2;
 elseif(jj==122)
     
 elseif(jj==123)

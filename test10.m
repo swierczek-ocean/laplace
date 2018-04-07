@@ -13,24 +13,27 @@ a = 10;
 b = 2;
 eps = 0.5;
 t = 1.5:149.5;
-ub = 10;
+Sings = makesings(a,b);
+ub = 100;
+sw = 2;
 start = 1;
 num_test = 83;
-error = zeros(num_test-start+1,2);
+error10 = zeros(num_test,2);
 %%
 
 %% tests
-parfor jj=start:num_test
-    True = master_inverse_laplace_fcn(t,a,b,jj,eps);
-    fun = @(x)master_laplace_fcn(x,a,b,jj,eps);
-    NAB = nabilt(fun,t,ub);
-    error(jj,:) = [LaplacePlot(True,NAB,t,jj,ub),jj];
+parfor jj=1:num_test
+    ll = jj+start-1;
+    True = master_inverse_laplace_fcn(t,a,b,ll,eps);
+    fun = @(x)master_laplace_fcn(x,a,b,ll,eps);
+    NAB = nabilt(fun,t,ub,ll,sw,Sings);
+    error10(jj,:) = [LaplacePlot(True,NAB,t,ll,ub),ll];
 end
 %%
 
 %% error summary
-fprintf('max relative error = %g percent\n',100*max(error(:,1)))
-fprintf('mean relative error = %g percent\n',100*mean(error(:,1)))
+fprintf('max relative error = %g percent\n',100*max(error10(:,1)))
+fprintf('mean relative error = %g percent\n',100*mean(error10(:,1)))
 %%
 
 save error10

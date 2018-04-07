@@ -2,7 +2,7 @@ function F = master_laplace_fcn(s,a,b,jj,eps)
 %% description
 % index jj selects the jjth laplace function.
 % the function is evaluated at complex frequencies s
-% with parameter a and possible b
+% with parameter a and possibly b
 %%
 
 if(jj==1)
@@ -239,7 +239,7 @@ elseif(jj==112)
 elseif(jj==113)
     F = exp(-a.*s)./s;
 elseif(jj==114)
-    F = tanh(a.*2./2)./(a.*s.^2);
+    F = tanh(a.*s./2)./(a.*s.^2);
 elseif(jj==115)
     F = tanh(a.*s./2)./s;
 elseif(jj==116)

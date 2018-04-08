@@ -190,50 +190,55 @@ elseif(jj==84)
     %     f = integral(funk,0,Inf)./(a.*sqrt(pi.*T));
     
     [kk,ll] = size(T);
+    f = zeros(kk,ll);
     for ii=1:kk
         for bb=1:ll
             funk = @(u)kern84(u,a,T(ii,bb),0);
-            f = integral(funk,0,Inf)./(a.*sqrt(pi.*T(ii,bb)));
+            f(ii,bb) = integral(funk,0,Inf)./(a.*sqrt(pi.*T(ii,bb)));
         end
     end
 elseif(jj==85)
     %     funk = @(u)kern84(u,a,T,1);
     %     f = integral(funk,0,Inf)./((a^3).*sqrt(pi.*T));
     [kk,ll] = size(T);
+    f = zeros(kk,ll);
     for ii=1:kk
         for bb=1:ll
             funk = @(u)kern84(u,a,T(ii,bb),1);
-            f = integral(funk,0,Inf)./((a^3).*sqrt(pi.*T(ii,bb)));
+            f(ii,bb) = integral(funk,0,Inf)./((a^3).*sqrt(pi.*T(ii,bb)));
         end
     end
 elseif(jj==86)
     %     funk = @(u)kern84(u,a,T,2);
     %     f = integral(funk,0,Inf)./((a^5).*sqrt(pi.*T));
     [kk,ll] = size(T);
+    f = zeros(kk,ll);
     for ii=1:kk
         for bb=1:ll
             funk = @(u)kern84(u,a,T(ii,bb),2);
-            f = integral(funk,0,Inf)./((a^5).*sqrt(pi.*T(ii,bb)));
+            f(ii,bb) = integral(funk,0,Inf)./((a^5).*sqrt(pi.*T(ii,bb)));
         end
     end
 elseif(jj==87)
     %     funk = @(u)kern84(u,a,T,3);
     %     f = integral(funk,0,Inf)./((a^7).*sqrt(pi.*T));
     [kk,ll] = size(T);
+    f = zeros(kk,ll);
     for ii=1:kk
         for bb=1:ll
             funk = @(u)kern84(u,a,T(ii,bb),3);
-            f = integral(funk,0,Inf)./((a^7).*sqrt(pi.*T(ii,bb)));
+            f(ii,bb) = integral(funk,0,Inf)./((a^7).*sqrt(pi.*T(ii,bb)));
         end
     end
 elseif(jj==88)
     %     funk = @(u)kern84(u,a,T,4);
     %     f = integral(funk,0,Inf)./((a^9).*sqrt(pi.*T));
     [kk,ll] = size(T);
+    f = zeros(kk,ll);
     for ii=1:kk
         for bb=1:ll
             funk = @(u)kern84(u,a,T(ii,bb),4);
-            f = integral(funk,0,Inf)./((a^9).*sqrt(pi.*T(ii,bb)));
+            f(ii,bb) = integral(funk,0,Inf)./((a^9).*sqrt(pi.*T(ii,bb)));
         end
     end
 elseif(jj==89)
@@ -322,13 +327,21 @@ elseif(jj==120)
 elseif(jj==121)
     f = floor(T).^2;
 elseif(jj==122)
-    
+    f = a.^floor(T);
 elseif(jj==123)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:kk
+        for bb=1:ll
+            if(T(ii,bb)<a)
+                f(ii,bb) = sin(pi*T(ii,bb)/a);
+            end
+        end
+    end
 elseif(jj==124)
-    
+    f = (exp(-b.*T)-exp(-a.*T))./(2*(b-a).*sqrt(pi.*T.^3));
 elseif(jj==125)
-
+    f = exp(a.*T).*(1./sqrt(pi.*T) - b.*erfcx(b.*sqrt(T)));
 elseif(jj==126)
     
 elseif(jj==127)

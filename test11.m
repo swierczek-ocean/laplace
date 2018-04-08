@@ -16,7 +16,7 @@ Sings = makesings(a,b);
 t = 1.5:pi/20:10;
 ub = 100;
 sw = 2;
-start = 114;
+start = 125;
 num_test = 1;
 error = zeros(num_test,2);
 %%

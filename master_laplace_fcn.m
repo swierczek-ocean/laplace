@@ -5,6 +5,10 @@ function F = master_laplace_fcn(s,a,b,jj,eps)
 % with parameter a and possibly b
 %%
 
+%% note
+% don't use functions 101 - 110
+%%
+
 if(jj==1)
     F = 1./(s-a);
 elseif(jj==2)
@@ -255,13 +259,13 @@ elseif(jj==120)
 elseif(jj==121)
     F = (exp(-s)+exp(-2.*s))./(s.*(1-exp(-s)).^2);
 elseif(jj==122)
-    
+    F = (1-exp(-s))./(s.*(1-a.*exp(-s)));
 elseif(jj==123)
-    
+    F = (pi*a.*(1+exp(-a.*s)))./(a^2.*s.^2+pi^2);
 elseif(jj==124)
-    
+    F = 1./(sqrt(s+a)+sqrt(s+b));
 elseif(jj==125)
-
+    F = 1./(sqrt(s-a)+b);
 elseif(jj==126)
     
 elseif(jj==127)

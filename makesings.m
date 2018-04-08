@@ -11,6 +11,12 @@ Sings(57,1) = a;
 Sings(62:65,1) = a*ones(4,1);
 Sings(69:71,1) = a*ones(3,1);
 Sings(72:73,1) = log(a)*ones(2,1);
+Sings(122,1) = log(a);
+Sings(125,1) = a;
+
+
+
+
 
 
 end

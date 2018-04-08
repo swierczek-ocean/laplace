@@ -1,13 +1,10 @@
-a=1;
-b=2;
+a=3;
+b=5;
 eps=0.1;
 
-t = 0.1:pi/10:25;
-
-X = master_inverse_laplace_fcn(t,a,b,84,eps);
 
 
-plot(t,X)
-
-
-X
+[X,Y] = meshgrid(-10:0.1:10,-10:0.1:10);
+Z = real(master_laplace_fcn(X+1i.*Y,a,b,125,eps));
+surf(X,Y,Z)
+xlabel('x')

@@ -2,8 +2,9 @@ function error = LaplacePlot(True,NAB,T,char,ub)
 colors
 
 Q = sort(True);
+Z = sort(NAB);
 
-if(Q(end)-Q(1)>1e5)&&(Q(1)>0)
+if(Q(end)-Q(1)>1e5)&&(Q(1)>0)&&(Z(1)>0)
     
     figure
     h1 = semilogy(T,True,'LineWidth',2.5,'Color',Color(:,11));

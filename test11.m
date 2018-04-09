@@ -14,11 +14,12 @@ b = 2;
 eps = 0.5;
 Sings = makesings(a,b);
 t = 1.5:pi/20:10;
+length = size(t,2);
 ub = 100;
 sw = 2;
-start = 125;
+start = 152;
 num_test = 1;
-error = zeros(num_test,2);
+error = zeros(num_test,length+1);
 %%
 
 %% tests
@@ -32,10 +33,10 @@ end
 %%
 
 %% error summary
-fprintf('max relative error = %g percent\n',100*max(error(:,1)))
-fprintf('mean relative error = %g percent\n',100*mean(error(:,1)))
+fprintf('max relative error = %g percent\n',100*max(reshape(error(:,1:end-1),num_test*length,1)))
+fprintf('mean relative error = %g percent\n',100*mean(reshape(error(:,1:end-1),num_test*length,1)))
 %%
 
-error
+[mean(error(:,1:end),2),error(:,end)]
 
 toc()

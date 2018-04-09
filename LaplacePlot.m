@@ -32,10 +32,10 @@ else
     
 end
 
-ind = find(True==0);
+ind = find(abs(True)<10e-03);
 BromRelError = abs(NAB-True)./abs(True);
 BromRelError(ind) = abs(NAB(ind)-True(ind));
-error = mean(BromRelError);
+error = BromRelError;
 
 figure
 semilogy(T,real(BromRelError),'*','MarkerSize',7,'Color',Color(:,12))

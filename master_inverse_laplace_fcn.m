@@ -5,6 +5,7 @@ function f = master_inverse_laplace_fcn(T,a,b,jj,eps)
 % with parameter a and possibly b
 %%
 ga = double(eulergamma);
+sum = 10000;
 
 if(jj==1)
     f = exp(a.*T);
@@ -343,59 +344,152 @@ elseif(jj==124)
 elseif(jj==125)
     f = exp(a.*T).*(1./sqrt(pi.*T) - b.*erfcx(b.*sqrt(T)));
 elseif(jj==126)
-    
+    f = besselj(0,a.*sqrt(T.^2+2*b.*T));
 elseif(jj==127)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:kk
+        for bb=1:ll
+            if(T(ii,bb)>b)
+                f(ii,bb) = besselj(0,a.*sqrt(T(ii,bb).^2-b^2));
+            end
+        end
+    end
 elseif(jj==128)
-    
+    f = (exp(-b.*T)-exp(-a.*T))./T;
 elseif(jj==129)
-    
+    f = -2.*(cos(a.*T)-cos(b.*T))./T;
 elseif(jj==130)
-    
+    f = exp(b.*T).*sin(a.*T)./a;
 elseif(jj==131)
-    
+    f = exp(b.*T).*cos(a.*T);
 elseif(jj==132)
-    
+    f = exp(b.*T).*sinh(a.*T)./a;
 elseif(jj==133)
-    
+    f = exp(b.*T).*cosh(a.*T);
 elseif(jj==134)
-
+    f = (exp(b.*T)-exp(a.*T))./(b-a);
 elseif(jj==135)
-    
+    f = (b.*exp(b.*T)-a.*exp(a.*T))./(b-a);
 elseif(jj==136)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/ii*sin(ii*pi*b/a).*cos(ii*pi.*T./a)); 
+    end
+    f = 2/pi.*f+(b/a);
 elseif(jj==137)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^(ii+1)/(2*ii-1)*sin((2*ii-1)*pi*b/(2*a)).*sin((2*ii-1)*pi.*T./(2*a))); 
+    end
+    f = 4/pi.*f;    
 elseif(jj==138)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/ii*cos(ii*pi*b/a).*sin(ii*pi.*T./a)); 
+    end
+    f = 2/pi.*f+(T./a);
 elseif(jj==139)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/(2*ii-1)*cos((2*ii-1)*pi*b/(2*a)).*cos((2*ii-1)*pi.*T./(2*a))); 
+    end
+    f = 4/pi.*f+1;        
 elseif(jj==140)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/(ii^2)*sin(ii*pi*b/a).*sin(ii*pi.*T./a)); 
+    end
+    f = (2*a/(pi^2)).*f+(b.*T./a);    
 elseif(jj==141)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/(2*ii-1)^2*sin((2*ii-1)*pi*b/(2*a)).*cos((2*ii-1)*pi.*T./(2*a))); 
+    end
+    f = (8*a/(pi^2)).*f+b;     
 elseif(jj==142)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/(ii^2)*cos(ii*pi*b/a).*(1-cos(ii*pi.*T./a))); 
+    end
+    f = (2*a/(pi^2)).*f+(T.^2./(2*a));       
 elseif(jj==143)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/(2*ii-1)^2*cos((2*ii-1)*pi*b/(2*a)).*sin((2*ii-1)*pi.*T./(2*a))); 
+    end
+    f = (8*a/(pi^2)).*f+T;       
 elseif(jj==144)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/(2*ii-1)^3*cos((2*ii-1)*pi*b/(2*a)).*cos((2*ii-1)*pi.*T./(2*a))); 
+    end
+    f = -(16*a^2/(pi^3)).*f+0.5.*(T.^2+b^2-a^2);       
 elseif(jj==145)
-
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^(ii+1)*ii.*sin(ii*pi*b/a).*exp(-(ii^2*pi^2.*T./(a^2)))); 
+    end
+    f = (2*pi/(a^2)).*f;
 elseif(jj==146)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^(ii+1)*(2*ii-1).*cos((2*ii-1)*pi*b/(2*a)).*exp(-((2*ii-1)^2*pi^2.*T./(4*a^2)))); 
+    end
+    f = (pi/(a^2)).*f;  
 elseif(jj==147)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^(ii+1).*sin((2*ii-1)*pi*b/(2*a)).*exp(-((2*ii-1)^2*pi^2.*T./(4*a^2)))); 
+    end
+    f = (2/a).*f;      
 elseif(jj==148)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii.*cos(ii*pi*b/a).*exp(-(ii^2*pi^2.*T./(a^2)))); 
+    end
+    f = (2/a).*f + 1/a;    
 elseif(jj==149)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/ii.*sin(ii*pi*b/a).*exp(-(ii^2*pi^2.*T./(a^2)))); 
+    end
+    f = (2/pi).*f + b/a;     
 elseif(jj==150)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/(2*ii-1).*cos((2*ii-1)*pi*b/(2*a)).*exp(-((2*ii-1)^2*pi^2.*T./(4*a^2))));
+    end
+    f = (4/pi).*f + 1;     
 elseif(jj==151)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/ii^3.*sin(ii*pi*b/a).*(1-exp(-(ii^2*pi^2.*T./(a^2))))); 
+    end
+    f = (2*a^2/(pi^3)).*f + b.*T./a;       
 elseif(jj==152)
-    
+    [kk,ll]=size(T);
+    f = zeros(kk,ll);
+    for ii=1:sum
+       f = f+((-1)^ii/(2*ii-1)^3.*cos((2*ii-1)*pi*b/(2*a)).*exp(-((2*ii-1)^2*pi^2.*T./(4*a^2)))); 
+    end
+    f = -(16*a^2/(pi^3)).*f + 0.5*(b^2-a^2) + T;      
 elseif(jj==153)
     
 elseif(jj==154)

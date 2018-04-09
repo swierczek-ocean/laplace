@@ -267,59 +267,59 @@ elseif(jj==124)
 elseif(jj==125)
     F = 1./(sqrt(s-a)+b);
 elseif(jj==126)
-    
+    F = exp(b.*(s - sqrt(s.^2+a^2)))./sqrt(s.^2+a^2);
 elseif(jj==127)
-    
+    F = exp(-b.*sqrt(s.^2+a^2))./sqrt(s.^2+a^2);
 elseif(jj==128)
-    
+    F = log((s+a)./(s+b));
 elseif(jj==129)
-    
+    F = log((s.^2+a^2)./(s.^2+b^2));
 elseif(jj==130)
-    
+    F = 1./((s-b).^2+a^2);
 elseif(jj==131)
-    
+    F = (s-b)./((s-b).^2+a^2);
 elseif(jj==132)
-    
+    F = 1./((s-b).^2-a^2);
 elseif(jj==133)
-    
+    F = (s-b)./((s-b).^2-a^2);
 elseif(jj==134)
-
+    F = 1./((s-b).*(s-a));
 elseif(jj==135)
-    
+    F = s./((s-b).*(s-a));
 elseif(jj==136)
-    
+    F = sinh(b.*s)./(s.*sinh(a.*s));
 elseif(jj==137)
-    
+    F = sinh(b.*s)./(s.*cosh(a.*s));
 elseif(jj==138)
-    
+    F = cosh(b.*s)./(s.*sinh(a.*s));    
 elseif(jj==139)
-    
+    F = cosh(b.*s)./(s.*cosh(a.*s));  
 elseif(jj==140)
-    
+    F = sinh(b.*s)./(s.^2.*sinh(a.*s));
 elseif(jj==141)
-    
+    F = sinh(b.*s)./(s.^2.*cosh(a.*s));
 elseif(jj==142)
-    
+    F = cosh(b.*s)./(s.^2.*sinh(a.*s)); 
 elseif(jj==143)
-    
+    F = cosh(b.*s)./(s.^2.*cosh(a.*s)); 
 elseif(jj==144)
-    
+    F = cosh(b.*s)./(s.^3.*cosh(a.*s)); 
 elseif(jj==145)
-
+    F = sinh(b.*sqrt(s))./sinh(a.*sqrt(s));
 elseif(jj==146)
-    
+    F = cosh(b.*sqrt(s))./cosh(a.*sqrt(s));
 elseif(jj==147)
-    
+    F = sinh(b.*sqrt(s))./(sqrt(s).*cosh(a.*sqrt(s)));
 elseif(jj==148)
-    
+    F = cosh(b.*sqrt(s))./(sqrt(s).*sinh(a.*sqrt(s)));
 elseif(jj==149)
-    
+    F = sinh(b.*sqrt(s))./(s.*sinh(a.*sqrt(s)));
 elseif(jj==150)
-    
+    F = cosh(b.*sqrt(s))./(s.*cosh(a.*sqrt(s)));
 elseif(jj==151)
-    
+    F = sinh(b.*sqrt(s))./(s.^2.*sinh(a.*sqrt(s)));
 elseif(jj==152)
-    
+    F = cosh(b.*sqrt(s))./(s.^2.*cosh(a.*sqrt(s)));
 elseif(jj==153)
     
 elseif(jj==154)

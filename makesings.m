@@ -17,8 +17,8 @@ Sings(128,1) = -b;
 Sings(130:131,1) = b*ones(2,1);
 Sings(132:133,1) = (b+a)*ones(2,1);
 Sings(134:135,1) = max([a,b])*ones(2,1);
-
-
+Sings(159,1) = a;
+Sings(161,1) = a^2;
 
 
 

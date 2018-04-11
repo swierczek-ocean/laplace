@@ -17,7 +17,7 @@ t = 1.5:pi/20:10;
 length = size(t,2);
 ub = 100;
 sw = 2;
-start = 152;
+start = 161;
 num_test = 1;
 error = zeros(num_test,length+1);
 %%

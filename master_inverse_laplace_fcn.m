@@ -491,23 +491,23 @@ elseif(jj==152)
     end
     f = -(16*a^2/(pi^3)).*f + 0.5*(b^2-a^2) + T;      
 elseif(jj==153)
-    
+    f = 0.5.*sign(sin(pi.*T./a))+0.5; 
 elseif(jj==154)
-
+    f = (exp(-b.*T)-exp(-a.*T))./(2.*sqrt(pi.*T.^3));
 elseif(jj==155)
-    
+    f = exp(T).*besselk(0,T);
 elseif(jj==156)
-    
+    f = 2^a.*T.^(a-0.5)./(prod(3:2:(2*a-1))*sqrt(pi));
 elseif(jj==157)
-    
+    f = laguerreL(a,T);
 elseif(jj==158)
-    
+    f = exp(-a.*T).*(1-2*a.*T)./sqrt(pi.*T);
 elseif(jj==159)
-    
+    f = 1./sqrt(pi.*T) + sqrt(a).*exp(a.*T).*erf(sqrt(a.*T));
 elseif(jj==160)
-    
+    f = erfcx(a.*sqrt(T));
 elseif(jj==161)
-    
+    f = exp(a^2.*T).*(b-a.*erf(a.*sqrt(T)))-b.*erfcx(b.*sqrt(T));
 elseif(jj==162)
     
 elseif(jj==163)

@@ -321,23 +321,23 @@ elseif(jj==151)
 elseif(jj==152)
     F = cosh(b.*sqrt(s))./(s.^2.*cosh(a.*sqrt(s)));
 elseif(jj==153)
-    
+    F = 1./(s.*(1+exp(-a.*s)));
 elseif(jj==154)
-
+    F = sqrt(s+a)-sqrt(s+b);
 elseif(jj==155)
-    
+    F = log(s-1+sqrt(s.^2-2.*s))./sqrt(s.^2-2.*s);
 elseif(jj==156)
-    
+    F = s.^(-a-0.5);
 elseif(jj==157)
-    
+    F = (1./s).*((s-1)./s).^a;
 elseif(jj==158)
-    
+    F = s./(s+a).^(3/2);
 elseif(jj==159)
-    
+    F = sqrt(s)./(s-a);
 elseif(jj==160)
-    
+    F = 1./(sqrt(s).*(sqrt(s)+a));
 elseif(jj==161)
-    
+    F = (b^2-a^2)./((s-a^2).*(b+sqrt(s)));
 elseif(jj==162)
     
 elseif(jj==163)

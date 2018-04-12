@@ -19,11 +19,11 @@ Sings(132:133,1) = (b+a)*ones(2,1);
 Sings(134:135,1) = max([a,b])*ones(2,1);
 Sings(159,1) = a;
 Sings(161,1) = a^2;
-
-
-
-
-
+Sings(162,1) = max([-a,-b]);
+Sings(163,1) = max([a^2,-sqrt(b),0]);
+Sings(173,1) = max([-a,-b]);
+Sings(174:178,1) = max([-a,-b])*ones(5,1);
+Sings(179,1) = max([-2*a,0]);
 
 
 

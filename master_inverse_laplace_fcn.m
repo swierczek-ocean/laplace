@@ -509,41 +509,41 @@ elseif(jj==160)
 elseif(jj==161)
     f = exp(a^2.*T).*(b-a.*erf(a.*sqrt(T)))-b.*erfcx(b.*sqrt(T));
 elseif(jj==162)
-    
+    f = (1/sqrt(b-a)).*exp(-a.*T).*erf(sqrt((b-a).*T));
 elseif(jj==163)
-    
+    f = exp(a^2.*T).*((b/a).*erf(a.*sqrt(T))-1) + erfcx(b.*sqrt(T));
 elseif(jj==164)
-    
+    f = hermiteH(2,sqrt(T))./(2.*sqrt(pi.*T));
 elseif(jj==165)
-
+    f = hermiteH(4,sqrt(T))./(12.*sqrt(pi.*T));
 elseif(jj==166)
-    
+    f = hermiteH(6,sqrt(T))./(120.*sqrt(pi.*T));
 elseif(jj==167)
-    
+    f = hermiteH(8,sqrt(T))./(1680.*sqrt(pi.*T));
 elseif(jj==168)
-    
+    f = hermiteH(3,sqrt(T))./(6.*sqrt(pi));
 elseif(jj==169)
-    
+    f = hermiteH(5,sqrt(T))./(60.*sqrt(pi));
 elseif(jj==170)
-    
+    f = hermiteH(7,sqrt(T))./(840.*sqrt(pi));
 elseif(jj==171)
-    
+    f = hermiteH(9,sqrt(T))./(15120.*sqrt(pi));
 elseif(jj==172)
-    
+    f = a.*exp(-a.*T).*(besseli(1,a.*T)+besseli(0,a.*T));
 elseif(jj==173)
-    
+    f = exp(-0.5*(a+b).*T).*besseli(0,((a-b)/2).*T);
 elseif(jj==174)
-
+    f = sqrt(pi).*(T./(a-b)).*exp(-0.5*(a+b).*T).*besseli(1,((a-b)/2).*T);
 elseif(jj==175)
-    
+    f = sqrt(pi).*(T./(a-b)).^2.*exp(-0.5*(a+b).*T).*besseli(2,((a-b)/2).*T);
 elseif(jj==176)
-    
+    f = sqrt(pi).*(T./(a-b)).^3.*exp(-0.5*(a+b).*T).*besseli(3,((a-b)/2).*T);
 elseif(jj==177)
-    
+    f = sqrt(pi).*(T./(a-b)).^4.*exp(-0.5*(a+b).*T).*besseli(4,((a-b)/2).*T);
 elseif(jj==178)
-    
+    f = T.*exp(-0.5*(a+b).*T).*(besseli(0,((a-b)/2).*T)+besseli(1,((a-b)/2).*T));
 elseif(jj==179)
-    
+    f = exp(-a.*T).*besseli(1,a.*T)./T;
 elseif(jj==180)
     
 elseif(jj==181)

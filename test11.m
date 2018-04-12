@@ -10,14 +10,14 @@ colors
 
 %% setting up time values and shifts
 a = 5;
-b = 2;
+b = 7;
 eps = 0.5;
 Sings = makesings(a,b);
 t = 1.5:pi/20:10;
 length = size(t,2);
 ub = 100;
 sw = 2;
-start = 161;
+start = 179;
 num_test = 1;
 error = zeros(num_test,length+1);
 %%

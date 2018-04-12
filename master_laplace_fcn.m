@@ -339,41 +339,41 @@ elseif(jj==160)
 elseif(jj==161)
     F = (b^2-a^2)./((s-a^2).*(b+sqrt(s)));
 elseif(jj==162)
-    
+    F = 1./((s+a).*sqrt(s+b));
 elseif(jj==163)
-    
+    F = (b^2-a^2)./(sqrt(s).*(s-a^2).*(sqrt(s)+b));
 elseif(jj==164)
-    
+    F = (1-s)./(s.^(3/2));
 elseif(jj==165)
-
+    F = (1-s).^2./(s.^(5/2));
 elseif(jj==166)
-    
+    F = (1-s).^3./(s.^(7/2));
 elseif(jj==167)
-    
+    F = (1-s).^4./(s.^(9/2));
 elseif(jj==168)
-    
+    F = (1-s)./(s.^(5/2));
 elseif(jj==169)
-    
+    F = (1-s).^2./(s.^(7/2));
 elseif(jj==170)
-    
+    F = (1-s).^3./(s.^(9/2));
 elseif(jj==171)
-    
+    F = (1-s).^4./(s.^(11/2));
 elseif(jj==172)
-    
+    F = sqrt(s+2*a)./sqrt(s) -1;
 elseif(jj==173)
-    
+    F = 1./(sqrt(s+a).*sqrt(s+b));
 elseif(jj==174)
-
+    F = gamma(3/2)./((s+a).^(3/2).*(s+b).^(3/2));
 elseif(jj==175)
-    
+    F = gamma(5/2)./((s+a).^(5/2).*(s+b).^(5/2));
 elseif(jj==176)
-    
+    F = gamma(7/2)./((s+a).^(7/2).*(s+b).^(7/2));
 elseif(jj==177)
-    
+    F = gamma(9/2)./((s+a).^(9/2).*(s+b).^(9/2));
 elseif(jj==178)
-    
+    F = 1./(sqrt(s+a).*(s+b).^(3/2));
 elseif(jj==179)
-    
+    F = (sqrt(s+2*a)-sqrt(s))./(sqrt(s+2*a)+sqrt(s));
 elseif(jj==180)
     
 elseif(jj==181)

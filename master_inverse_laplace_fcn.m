@@ -545,48 +545,128 @@ elseif(jj==178)
 elseif(jj==179)
     f = exp(-a.*T).*besseli(1,a.*T)./T;
 elseif(jj==180)
-    
+    f = 0.5./T.*exp(-0.5*(a+b).*T).*besseli(1/2,((a-b)/2).*T);
 elseif(jj==181)
-    
+    f = 1.5./T.*exp(-0.5*(a+b).*T).*besseli(3/2,((a-b)/2).*T);
 elseif(jj==182)
-    
+    f = 2.5./T.*exp(-0.5*(a+b).*T).*besseli(5/2,((a-b)/2).*T);
 elseif(jj==183)
-    
+    f = 3.5./T.*exp(-0.5*(a+b).*T).*besseli(7/2,((a-b)/2).*T);
 elseif(jj==184)
-    
+    f = exp(-0.5*a.*T).*besseli(1/2,0.5*a.*T)./sqrt(a);
 elseif(jj==185)
-
+    f = exp(-0.5*a.*T).*besseli(3/2,0.5*a.*T)./(a^(3/2));
 elseif(jj==186)
-    
+    f = exp(-0.5*a.*T).*besseli(5/2,0.5*a.*T)./(a^(5/2));
 elseif(jj==187)
-    
+    f = exp(-0.5*a.*T).*besseli(7/2,0.5*a.*T)./(a^(7/2));
 elseif(jj==188)
-    
+    f = (sqrt(pi)/gamma(5/2)).*((T./(2*a)).^2).*besselj(2,a.*T);
 elseif(jj==189)
-    
+    f = (sqrt(pi)/gamma(7/2)).*((T./(2*a)).^3).*besselj(3,a.*T);
 elseif(jj==190)
-    
+    f = (sqrt(pi)/gamma(9/2)).*((T./(2*a)).^4).*besselj(4,a.*T);
 elseif(jj==191)
-    
+    f = (sqrt(pi)/gamma(11/2)).*((T./(2*a)).^5).*besselj(5,a.*T);
 elseif(jj==192)
-    
+    f = (a./T).*besselj(1,a.*T);
 elseif(jj==193)
-    
+    f = (3/2).*(a^(3/2)./T).*besselj(3/2,a.*T);
 elseif(jj==194)
-    
+    f = 2.*(a^2./T).*besselj(2,a.*T);
 elseif(jj==195)
-
+    f = (5/2).*(a^(5/2)./T).*besselj(5/2,a.*T);
 elseif(jj==196)
-    
+    f = 3.*(a^3./T).*besselj(3,a.*T);
 elseif(jj==197)
-    
+    f = (T-a).*heaviside(T-a);
 elseif(jj==198)
-    
+    f = sqrt(T-a).*heaviside(T-a)./gamma(3/2);
 elseif(jj==199)
-    
+    f = (T-a).^2.*heaviside(T-a)./gamma(3);
 elseif(jj==200)  
+    f = cosh(2.*sqrt(a.*T))./sqrt(pi.*T);
+elseif(jj==201)  
+    f = sinh(2.*sqrt(a.*T))./sqrt(pi*a);
+elseif(jj==202)  
+    f = sqrt(T./a).*besseli(1,2.*sqrt(a.*T));
+elseif(jj==203)  
+    f = ((T./a).^(3/4)).*besseli(3/2,2.*sqrt(a.*T));
+elseif(jj==204)  
+    f = 0.25.*exp(-a^2./(4.*T)).*hermiteH(2,0.5*a./sqrt(T))./sqrt(pi.*T.^3);
+elseif(jj==205)  
+    f = 0.125.*exp(-a^2./(4.*T)).*hermiteH(3,0.5*a./sqrt(T))./sqrt(pi.*T.^4);
+elseif(jj==206)  
+    f = 0.0625.*exp(-a^2./(4.*T)).*hermiteH(4,0.5*a./sqrt(T))./sqrt(pi.*T.^5);
+elseif(jj==207)  
+    f = 0.03125.*exp(-a^2./(4.*T)).*hermiteH(5,0.5*a./sqrt(T))./sqrt(pi.*T.^6);
+elseif(jj==208)  
+    f = exp(-0.25*b^2./T)./sqrt(pi.*T) - a*exp(a*b).*exp(a^2.*T).*erfc(a.*sqrt(T)+0.5*b./sqrt(T));
+elseif(jj==209)  
+    f = -exp(a*b).*exp(a^2.*T).*erfc(a.*sqrt(T)+0.5*b./sqrt(T)) + erfc(0.5*b./sqrt(T));
+elseif(jj==210)  
+    f = exp(a*b).*exp(a^2.*T).*erfc(a.*sqrt(T)+0.5*b./sqrt(T));
+elseif(jj==211)  
+    f = exp(-0.5*a.*T).*besseli(0,0.5*a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==212)  
+    f = besselj(0,a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==213)  
+    f = besseli(0,a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==214)  
+    f = besselj(0,a.*sqrt(T.^2+2*b.*T)); 
+elseif(jj==215)  
+    f = (a*b./sqrt(T.^2-b^2)).*besselj(1,a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==216)  
+    f = (a*b./sqrt(T.^2-b^2)).*besseli(1,a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==217)  
+    f = sqrt((T-b)./(T+b)).*besselj(1,a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==218)  
+    f = ((T-b)./(T+b)).*besselj(2,a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==219)  
+    f = ((T-b)./(T+b)).^(3/2).*besselj(3,a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==220)  
+    f = ((T-b)./(T+b)).^2.*besselj(4,a.*sqrt(T.^2-b^2)).*heaviside(T-b);
+elseif(jj==221)  
+    f = T.*(psi(2)-log(T))./gamma(2);
+elseif(jj==222)  
+    f = T.^2.*(psi(3)-log(T))./gamma(3);
+elseif(jj==223)  
+    f = T.^3.*(psi(4)-log(T))./gamma(4);
+elseif(jj==224)  
+    f = exp(a.*T).*(log(a)+expint(a.*T));
+elseif(jj==225)  
+    f = cos(T).*sinint(T)-sin(T).*cosint(T);
+elseif(jj==226)  
+    f = -sin(T).*sinint(T)-cos(T).*cosint(T);
+elseif(jj==227)  
+    f = 2.*(a*log(a).*T + sin(a.*T) - a.*T.*cosint(a.*T))./a;
+elseif(jj==228)  
+    f = (2-2.*cosh(a.*T))./T;
+elseif(jj==229)  
+    f = heaviside(T-a)./sqrt(T.^2-a^2);
+elseif(jj==230)  
+    f = 0.5.*exp(-0.25*a^2./T)./T;
+elseif(jj==231)  
+    f = sqrt(T.^2+2*a.*T)./a;
+elseif(jj==232)  
+    f = exp(-0.25*a^2./T)./a;
+elseif(jj==233)  
+    f = 2.*besselk(0,2*sqrt(2*a.*T))./sqrt(pi.*T);
+elseif(jj==234)  
+    f = (heaviside(T)-heaviside(T-2*a))./sqrt(2*a.*T-T.^2);
+elseif(jj==235)  
+    f = (a-T).*(heaviside(T)-heaviside(T-2*a))./(pi*a.*sqrt(2*a.*T-T.^2));
+elseif(jj==236)  
+    
+elseif(jj==237)  
+    
+elseif(jj==238)  
+    
+elseif(jj==239)  
+    
+elseif(jj==240)  
+    
 
-   
 
 
 end

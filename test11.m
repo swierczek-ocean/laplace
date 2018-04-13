@@ -9,15 +9,15 @@ colors
 %%
 
 %% setting up time values and shifts
-a = 5;
-b = 7;
+a = 4;
+b = 2;
 eps = 0.5;
 Sings = makesings(a,b);
 t = 1.5:pi/20:10;
 length = size(t,2);
 ub = 100;
 sw = 2;
-start = 179;
+start = 58;
 num_test = 1;
 error = zeros(num_test,length+1);
 %%

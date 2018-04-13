@@ -5,6 +5,6 @@ eps=0.1;
 
 
 [X,Y] = meshgrid(-10:0.1:10,-10:0.1:10);
-Z = imag(master_laplace_fcn(X+1i.*Y,a,b,125,eps));
+Z = real(master_laplace_fcn(X+1i.*Y,a,b,200,eps));
 surf(X,Y,Z)
 xlabel('x')

@@ -6,7 +6,8 @@ function F = master_laplace_fcn(s,a,b,jj,eps)
 %%
 
 %% note
-% don't use functions 101 - 110
+% (1) don't use functions 101 - 110
+% (2) for *some* of these functions, a and/or b must be positive
 %%
 
 if(jj==1)
@@ -375,48 +376,128 @@ elseif(jj==178)
 elseif(jj==179)
     F = (sqrt(s+2*a)-sqrt(s))./(sqrt(s+2*a)+sqrt(s));
 elseif(jj==180)
-    
+    F = sqrt(a-b)./sqrt(sqrt(s+a)+sqrt(s+b));
 elseif(jj==181)
-    
+    F = (a-b).^(3/2)./((sqrt(s+a)+sqrt(s+b)).^(3/2));
 elseif(jj==182)
-    
+    F = (a-b).^(5/2)./((sqrt(s+a)+sqrt(s+b)).^(5/2));
 elseif(jj==183)
-    
+    F = (a-b).^(7/2)./((sqrt(s+a)+sqrt(s+b)).^(7/2));
 elseif(jj==184)
-    
+    F = ((sqrt(s+a)+sqrt(s)).^(-1))./(sqrt(s).*sqrt(s+a));
 elseif(jj==185)
-
+    F = ((sqrt(s+a)+sqrt(s)).^(-3))./(sqrt(s).*sqrt(s+a));
 elseif(jj==186)
-    
+    F = ((sqrt(s+a)+sqrt(s)).^(-5))./(sqrt(s).*sqrt(s+a));
 elseif(jj==187)
-    
+    F = ((sqrt(s+a)+sqrt(s)).^(-7))./(sqrt(s).*sqrt(s+a));
 elseif(jj==188)
-    
+    F = 1./(s.^2+a^2).^(5/2);
 elseif(jj==189)
-    
+    F = 1./(s.^2+a^2).^(7/2);
 elseif(jj==190)
-    
+    F = 1./(s.^2+a^2).^(9/2);
 elseif(jj==191)
-    
+    F = 1./(s.^2+a^2).^(11/2);
 elseif(jj==192)
-    
+    F = (sqrt(s.^2+a^2)-s);
 elseif(jj==193)
-    
+    F = (sqrt(s.^2+a^2)-s).^(3/2);
 elseif(jj==194)
-    
+    F = (sqrt(s.^2+a^2)-s).^2;
 elseif(jj==195)
-
+    F = (sqrt(s.^2+a^2)-s).^(5/2);
 elseif(jj==196)
-    
+    F = (sqrt(s.^2+a^2)-s).^3;
 elseif(jj==197)
-    
+    F = exp(-a.*s)./(s.^2);
 elseif(jj==198)
-    
+    F = exp(-a.*s)./(s.^(3/2)); 
 elseif(jj==199)
-    
+    F = exp(-a.*s)./(s.^3); 
 elseif(jj==200)  
-
+    F = exp(a./s)./sqrt(s);
+elseif(jj==201)  
+    F = exp(a./s)./(s.^(3/2));
+elseif(jj==202)  
+    F = exp(a./s)./(s.^2);
+elseif(jj==203)  
+    F = exp(a./s)./(s.^(5/2));
+elseif(jj==204)  
+    F = sqrt(s).*exp(-a.*sqrt(s));
+elseif(jj==205)  
+    F = s.*exp(-a.*sqrt(s));
+elseif(jj==206)  
+    F = s.^(3/2).*exp(-a.*sqrt(s));
+elseif(jj==207)  
+    F = s.^2.*exp(-a.*sqrt(s));
+elseif(jj==208)  
+    F = exp(-b.*sqrt(s))./(a+sqrt(s));
+elseif(jj==209)  
+    F = a.*exp(-b.*sqrt(s))./(s.*(a+sqrt(s)));
+elseif(jj==210)  
+    F = exp(-b.*sqrt(s))./(sqrt(s).*(a+sqrt(s)));
+elseif(jj==211)  
+    F = exp(-b.*sqrt(s.*(s+a)))./sqrt(s.*(s+a));
+elseif(jj==212)  
+    F = exp(-b.*sqrt(s.^2+a^2))./sqrt(s.^2+a^2);
+elseif(jj==213)  
+    F = exp(-b.*sqrt(s.^2-a^2))./sqrt(s.^2-a^2);
+elseif(jj==214)  
+    F = exp(-b.*(sqrt(s.^2+a^2)-s))./sqrt(s.^2+a^2);
+elseif(jj==215)  
+    F = exp(-b.*s)-exp(-b.*sqrt(s.^2+a^2));
+elseif(jj==216)  
+    F = exp(-b.*sqrt(s.^2-a^2)) - exp(-b.*s);
+elseif(jj==217)  
+    F = a.*exp(-b.*sqrt(s.^2+a^2))./sqrt(s.^2+a^2)./(sqrt(s.^2+a^2)+s);
+elseif(jj==218)  
+    F = a^2.*exp(-b.*sqrt(s.^2+a^2))./sqrt(s.^2+a^2)./(sqrt(s.^2+a^2)+s).^2;
+elseif(jj==219)  
+    F = a^3.*exp(-b.*sqrt(s.^2+a^2))./sqrt(s.^2+a^2)./(sqrt(s.^2+a^2)+s).^3;
+elseif(jj==220)  
+    F = a^4.*exp(-b.*sqrt(s.^2+a^2))./sqrt(s.^2+a^2)./(sqrt(s.^2+a^2)+s).^4;
+elseif(jj==221)  
+    F = log(s)./(s.^2);
+elseif(jj==222)  
+    F = log(s)./(s.^3);
+elseif(jj==223)  
+    F = log(s)./(s.^4);
+elseif(jj==224)  
+    F = log(s)./(s-a);
+elseif(jj==225)  
+    F = log(s)./(s.^2+1);
+elseif(jj==226)  
+    F = s.*log(s)./(s.^2+1);
+elseif(jj==227)  
+    F = log(s.^2+a^2)./(s.^2);
+elseif(jj==228)  
+    F = log((s.^2-a^2)./(s.^2));
+elseif(jj==229)  
+    F = besselk(0,a.*s);
+elseif(jj==230)  
+    F = besselk(0,a.*sqrt(s));
+elseif(jj==231)  
+    F = exp(a.*s).*besselk(1,a.*s)./s;
+elseif(jj==232)  
+    F = besselk(1,a.*sqrt(s))./sqrt(s);
+elseif(jj==233)  
+    F = exp(a./s).*besselk(0,a./s)./sqrt(s);
+elseif(jj==234)  
+    F = pi.*exp(-a.*s).*besseli(0,a.*s);
+elseif(jj==235)  
+    F = exp(-a.*s).*besseli(1,a.*s);
+elseif(jj==236)  
     
+elseif(jj==237)  
+    
+elseif(jj==238)  
+    
+elseif(jj==239)  
+    
+elseif(jj==240)  
+    
+
 
 end
 

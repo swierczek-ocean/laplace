@@ -9,9 +9,9 @@ Contour1 = sigma + 1i.*normrnd(0,sd,m,1);
 Contour2 = sigma + 1i.*unifrnd(-R,R,m,1);
 
 figure
-h1=plot(X,'*','MarkerSize',7,'Color',Color(:,9));
+h1=plot(X,'.','MarkerSize',10,'Color',Color(:,9));
 hold on
-h2=plot([Contour1;Contour2],'o','MarkerSize',3,'Color',Color(:,8));
+h2=plot([Contour1;Contour2],'.','MarkerSize',7,'Color',Color(:,11));
 axis([-13 13 -13 13])
 xL = xlim;
 yL = ylim;
@@ -31,9 +31,9 @@ MC2 = (Contour2-sigma-b)./(Contour2-sigma+b);
 
 
 figure
-h1=plot(MX,'*','MarkerSize',7,'Color',Color(:,9));
+h1=plot(MX,'.','MarkerSize',10,'Color',Color(:,9));
 hold on
-h2=plot([MC1;MC2],'o','MarkerSize',3,'Color',Color(:,8));
+h2=plot([MC1;MC2],'.','MarkerSize',7,'Color',Color(:,11));
 axis([-1.2 1.6 -1.12 1.12])
 xL = xlim;
 yL = ylim;

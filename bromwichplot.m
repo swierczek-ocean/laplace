@@ -29,9 +29,9 @@ W = [W1,W2];
 
 
 figure
-h1=plot(V(:,1),V(:,2),'o','MarkerSize',3,'Color',Color(:,8));
+h1=plot(V(:,1),V(:,2),'.','MarkerSize',10,'Color',Color(:,11));
 hold on
-h2=plot(W(:,1),W(:,2),'*','MarkerSize',7,'Color',Color(:,9));
+h2=plot(W(:,1),W(:,2),'.','MarkerSize',10,'Color',Color(:,9));
 axis([-5 7 -7 7])
 xL = xlim;
 yL = ylim;
@@ -42,7 +42,7 @@ xlabel('real part s')
 ylabel('imaginary part s')
 legend([h1(1),h2(1)],'contour','singularities of F(s)')
 
-fullscreen()
+%fullscreen()
 print('bromwicha','-djpeg')
 hold off
 

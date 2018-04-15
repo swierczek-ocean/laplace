@@ -1,0 +1,317 @@
+\documentclass{article}
+
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{color}
+\addtolength\aboverulesep{0.95ex}  % extra spacing above and below rules
+\addtolength\belowrulesep{-0.95ex}
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+%\setlength{\arrayrulewidth}{1mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{2.5}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\newcommand{\goodchi}{\protect\raisebox{4pt}{$\chi$}}
+
+
+\begin{document}
+\large
+\begin{center}
+\begin{longtable}{lcc}
+\caption[Laplace Transform Pairs]{Laplace Transform Pairs} \label{LT} \\
+
+\hline \multicolumn{1}{c} {} & \multicolumn{1}{c}{$F(s)$} & \multicolumn{1}{c}{$f(t)$} \\ \hline 
+\endfirsthead
+
+\hline \multicolumn{1}{c}{} &
+\multicolumn{1}{c}{$F(s)$} &
+\multicolumn{1}{c}{$f(t)$} \\ \hline 
+\endhead
+
+\hline \hline
+\endlastfoot
+
+1 & $\dfrac{1}{s-a}$  &  $e^{at}$  \\ \midrule
+2 &  $\dfrac{1}{(s-a)^2}$  &  $te^{at}$  \\ \midrule
+3 &  $\dfrac{1}{(s-a)^3}$  &  $\frac12 t^2e^{at}$  \\ \midrule
+4 &  $\dfrac{1}{(s-a)^4}$  &  $\frac16 t^3e^{at}$  \\ \midrule
+5 &  $\dfrac{1}{(s-a)^5}$  &  $\frac{1}{24}t^4e^{at}$  \\ \midrule
+6 &  $\dfrac{1}{s^2+a^2}$  &  $\dfrac{\sin at}{a}$  \\ \midrule
+7 &  $\dfrac{s}{s^2+a^2}$  &  $\cos at$  \\ \midrule
+8 &  $\dfrac{1}{s^2-a^2}$  &  $\dfrac{\sinh at}{a}$  \\ \midrule
+9 &  $\dfrac{s}{s^2-a^2}$  &  $\cosh at$  \\ \midrule
+10 &  $\dfrac{1}{(s^2+a^2)^2}$  &  $\dfrac{\sin at-at\cos at}{2a^3}$  \\ \midrule
+11 &  $\dfrac{s}{(s^2+a^2)^2}$  &  $\dfrac{t\sin at}{2a}$  \\ \midrule
+12 &  $\dfrac{s^2}{(s^2+a^2)^2}$  &  $\dfrac{\sin at+at\cos at}{2a}$  \\ \midrule
+13 &  $\dfrac{s^3}{(s^2+a^2)^2}$  &  $\cos at - \frac12at \sin at$  \\ \midrule
+14 &  $\dfrac{s^2-a^2}{(s^2+a^2)^2}$  &  $t \cos at$  \\ \midrule
+15 &  $\dfrac{1}{(s^2-a^2)^2}$  &  $\dfrac{at \cosh at - \sinh at}{2a^3}$  \\ \midrule
+16 &  $\dfrac{s}{(s^2-a^2)^2}$  &  $\dfrac{t \sinh at}{2a}$  \\ \midrule
+17 &  $\dfrac{s^2}{(s^2-a^2)^2}$  &  $\dfrac{\sinh at + at \cosh at}{2a}$  \\ \midrule
+18 &  $\dfrac{s^3}{(s^2-a^2)^2}$  &  $\cosh at + \frac12 at \sinh at$  \\ \midrule
+19 &  $\dfrac{s^2+a^2}{(s^2-a^2)^2}$  &  $t \cosh at$  \\ \midrule
+20 &  $\dfrac{1}{(s^2+a^2)^3}$  &  $\dfrac{(3-a^2t^2) \sin at - 3at \cos at}{8a^5}$  \\ \midrule
+21 &  $\dfrac{s}{(s^2+a^2)^3}$  &  $\dfrac{t \sin at - at^2 \cos at}{8a^3}$  \\ \midrule
+22 &  $\dfrac{s^2}{(s^2+a^2)^3}$  &  $\dfrac{(1+a^2t^2) \sin at - at \cos at}{8a^3}$  \\ \midrule
+23 &  $\dfrac{s^3}{(s^2+a^2)^3}$  &  $\dfrac{3t \sin at + at^2 \cos at}{8a}$  \\ \midrule
+24 &  $\dfrac{s^4}{(s^2+a^2)^3}$  &  $\dfrac{(3-a^2t^2) \sin at + 5at \cos at}{8a}$  \\ \midrule
+25 &  $\dfrac{s^5}{(s^2+a^2)^3}$  &  $\dfrac{(8-a^2t^2) \cos at - 7at \sin at}{8}$  \\ \midrule
+26 &  $\dfrac{3s^2-a^2}{(s^2+a^2)^3}$  &  $\dfrac{t^2 \sin at}{2a}$  \\ \midrule
+27 &  $\dfrac{s^3-3a^2s}{(s^2+a^2)^3}$  &  $\frac12 t^2 \cos at$  \\ \midrule
+28 &  $\dfrac{s^4-6a^2s^2+a^4}{(s^2+a^2)^4}$  &  $\frac16 t^3 \cos at$  \\ \midrule
+29 &  $\dfrac{s^3-a^2s}{(s^2+a^2)^4}$  &  $\dfrac{t^3 \sin at}{24a}$  \\ \midrule
+30 &  $\dfrac{1}{(s^2-a^2)^3}$  &  $\dfrac{(3+a^2t^2) \sinh at - 3at \cosh at}{8a^5}$  \\ \midrule
+31 &  $\dfrac{s}{(s^2-a^2)^3}$  &  $\dfrac{at^2 \cosh at - t \sinh at}{8a^3}$  \\ \midrule
+32 &  $\dfrac{s^2}{(s^2-a^2)^3}$  &  $\dfrac{at \cosh at - (a^2t^2-1)\sinh at}{8a^3}$  \\ \midrule
+33 &  $\dfrac{s^3}{(s^2-a^2)^3}$  &  $\dfrac{3t \sinh at + at^2 \cosh at}{8a}$  \\ \midrule
+34 &  $\dfrac{s^4}{(s^2-a^2)^3}$  &  $\dfrac{(3+a^2t^2) \sinh at + 5at \cosh at}{8a}$  \\ \midrule
+35 &  $\dfrac{s^5}{(s^2-a^2)^3}$  &  $\dfrac{(8+a^2t^2) \cosh at + 7at \sinh at}{8}$  \\ \midrule
+36 &  $\dfrac{3s^2+a^2}{(s^2-a^2)^3}$  &  $\dfrac{t^2 \sinh at}{2a}$  \\ \midrule
+37 &  $\dfrac{s^3+3a^2s}{(s^2-a^2)^3}$  &  $\frac12 t^2 \cosh at$  \\ \midrule
+38 &  $\dfrac{s^4+6a^2s^2+a^2}{(s^2-a^2)^4}$  &  $\frac16 t^3 \cosh at$  \\ \midrule
+39 &  $\dfrac{s^3+a^2s}{(s^2-a^2)^4}$  &  $\dfrac{t^3 \sinh at}{24a}$  \\ \midrule
+40 &  $\dfrac{1}{s^3+a^3}$  &  $\dfrac{e^{\frac12 at}}{3a^2} \big[ \sqrt{3} \sin \frac{\sqrt{3}at}{2} - \cos \frac{\sqrt{3}at}{2} + e^{-\frac{3at}{2}}  \big]$  \\ \midrule
+41 &  $\dfrac{s}{s^3+a^3}$  &  $\dfrac{e^{\frac12 at}}{3a} \big[ \sqrt{3} \sin \frac{\sqrt{3}at}{2} + \cos \frac{\sqrt{3}at}{2} - e^{-\frac{3at}{2}}  \big]$  \\ \midrule
+42 &  $\dfrac{s^2}{s^3+a^3}$  &  $\frac13 e^{-at} + \frac23 e^{\frac{at}{2}} \cos \frac{\sqrt{3}at}{2} $ \\ \midrule
+43 &  $\dfrac{1}{s^3-a^3}$  &  $\dfrac{e^{-\frac12 at}}{3a^2} \big[ e^{\frac{3at}{2}} - \sqrt{3} \sin \frac{\sqrt{3}at}{2} - \cos \frac{\sqrt{3}at}{2} \big]$  \\ \midrule
+44 &  $\dfrac{s}{s^3-a^3}$  &  $\dfrac{e^{-\frac12 at}}{3a} \big[ \sqrt{3} \sin \frac{\sqrt{3}at}{2} - \cos \frac{\sqrt{3}at}{2} + e^{\frac{3at}{2}}  \big]$  \\ \midrule
+45 &  $\dfrac{s^2}{s^3-a^3}$  &  $\frac13 e^{at} + \frac23 e^{-\frac{at}{2}} \cos \frac{\sqrt{3}at}{2} $  \\ \midrule
+46 &  $\dfrac{1}{s^4 + 4a^4}$  &  $\dfrac{\sin at \cosh at - \cos at \sinh at}{4a^3}$  \\ \midrule
+47 &  $\dfrac{s}{s^4 + 4a^4}$  &  $\dfrac{\sin at \sinh at}{2a^2}$  \\ \midrule
+48 &  $\dfrac{s^2}{s^4 + 4a^4}$  &  $\dfrac{\sin at \cosh at + \cos at \sinh at}{2a}$  \\ \midrule
+49 &  $\dfrac{s^3}{s^4 + 4a^4}$  &  $\cos at \cosh at$  \\ \midrule
+50 &  $\dfrac{1}{s^4 - a^4}$  &  $\dfrac{\sinh at - \sin at}{2a^3}$  \\ \midrule
+51 &  $\dfrac{s}{s^4 - a^4}$  &  $\dfrac{\cosh at - \cos at}{2a^2}$  \\ \midrule
+52 &  $\dfrac{s^2}{s^4 - a^4}$  &  $\dfrac{\sinh at + \sin at}{2a}$  \\ \midrule
+53 &  $\dfrac{s^3}{s^4 - a^4}$  &  $\dfrac{\cosh at + \cos at}{2}$  \\ \midrule
+54 &  $\dfrac{1}{s \sqrt{s+a}}$  &  $\dfrac{\textnormal{erf } \sqrt{at}}{\sqrt{a}}$  \\ \midrule
+55 &  $\dfrac{1}{\sqrt{s}(s-a)}$  &  $\dfrac{e^{at} \textnormal{erf } \sqrt{at}}{\sqrt{a}}$  \\ \midrule
+56 &  $\dfrac{1}{\sqrt{s^2+a^2}}$  &  $J_0 (at)$  \\ \midrule
+57 &  $\dfrac{1}{\sqrt{s^2-a^2}}$  &  $I_0 (at)$  \\ \midrule
+58 &  $\dfrac{\sqrt{s^2+a^2}-s}{\sqrt{s^2+a^2}}$  &  $a J_1 (at)$  \\ \midrule
+59 &  $\dfrac{(\sqrt{s^2+a^2}-s)^2}{\sqrt{s^2+a^2}}$  &  $a^2 J_2 (at)$  \\ \midrule
+60 &  $\dfrac{(\sqrt{s^2+a^2}-s)^3}{\sqrt{s^2+a^2}}$  &  $a^3 J_3 (at)$  \\ \midrule
+61 &  $\dfrac{(\sqrt{s^2+a^2}-s)^4}{\sqrt{s^2+a^2}}$  &  $a^4 J_4 (at)$  \\ \midrule
+62 &  $\dfrac{s-\sqrt{s^2-a^2}}{\sqrt{s^2-a^2}}$  &  $a I_1 (at)$  \\ \midrule
+63 &  $\dfrac{(s-\sqrt{s^2-a^2})^2}{\sqrt{s^2-a^2}}$  &  $a^2 I_2 (at)$  \\ \midrule
+64 &  $\dfrac{(s-\sqrt{s^2-a^2})^3}{\sqrt{s^2-a^2}}$  &  $a^3 I_3 (at)$  \\ \midrule
+65 &  $\dfrac{(s-\sqrt{s^2-a^2})^4}{\sqrt{s^2-a^2}}$  &  $a^4 I_4 (at)$  \\ \midrule
+66 &  $\dfrac{1}{(s^2+a^2)^{\frac32}}$  &  $\dfrac{t J_0(at)}{a}$  \\ \midrule
+67 &  $\dfrac{s}{(s^2+a^2)^{\frac32}}$  &  $t J_0 (at)$  \\ \midrule
+68 &  $\dfrac{s^2}{(s^2+a^2)^{\frac32}}$  &  $J_0 (at) - at J_1 (at)$  \\ \midrule
+69 &  $\dfrac{1}{(s^2-a^2)^{\frac32}}$  &  $\dfrac{t I_0(at)}{a}$  \\ \midrule
+70 &  $\dfrac{s}{(s^2-a^2)^{\frac32}}$  &  $t I_0 (at)$  \\ \midrule
+71 &  $\dfrac{s^2}{(s^2-a^2)^{\frac32}}$  &  $I_0 (at) + at I_1 (at)$  \\ \midrule
+72 &  $\dfrac{a}{s(e^s-a)}$  &  $\displaystyle\sum_{k=1}^{\lfloor t \rfloor} a^k$  \\ \midrule
+73 &  $\dfrac{e^s-1}{s(e^s-a)}$  &  $a^{\lfloor t \rfloor}$  \\ \midrule
+74 &  $\dfrac{e^{-\frac{a}{s}}}{\sqrt{s}}$  &  $\dfrac{\cos 2\sqrt{at}}{\sqrt{\pi t}}$  \\ \midrule
+75 &  $\dfrac{e^{-\frac{a}{s}}}{s^{\frac32}}$  &  $\dfrac{\sin 2 \sqrt{at}}{\sqrt{\pi a}}$  \\ \midrule
+76 &  $\dfrac{e^{-\frac{a}{s}}}{s}$  &  $J_0 (2 \sqrt{at})$  \\ \midrule
+77 &  $\dfrac{e^{-\frac{a}{s}}}{s^2}$  &  $\bigg( \dfrac{t}{a} \bigg)^{\frac12} J_1 (2 \sqrt{at})$  \\ \midrule
+78 &  $\dfrac{e^{-\frac{a}{s}}}{s^3}$  &  $\bigg( \dfrac{t}{a} \bigg) J_2 (2 \sqrt{at})$  \\ \midrule
+79 &  $\dfrac{e^{-\frac{a}{s}}}{s^4}$  &  $\bigg( \dfrac{t}{a} \bigg)^{\frac32} J_3 (2 \sqrt{at})$  \\ \midrule
+80 &  $\dfrac{e^{-a\sqrt{s}}}{\sqrt{s}}$  &  $\dfrac{e^{-\frac{a^2}{4t}}}{\sqrt{\pi t}}$  \\ \midrule
+81 &  $e^{-a\sqrt{s}}$  &  $\dfrac{a}{2 \sqrt{\pi t^3}} e^{-\frac{a^2}{4t}}$  \\ \midrule
+82 &  $\dfrac{1-e^{-a\sqrt{s}}}{s}$  &  $\textnormal{erf} \bigg( \dfrac{a}{2 \sqrt{t}} \bigg)$  \\ \midrule
+83 &  $\dfrac{e^{-a\sqrt{s}}}{s}$  &  $\textnormal{erfc} \bigg( \dfrac{a}{2 \sqrt{t}} \bigg)$  \\ \midrule
+84 &  $\dfrac{e^{-\frac{a}{\sqrt{s}}}}{s}$  &  $\dfrac{1}{\sqrt{\pi t}a} \displaystyle{\int_0^{\infty}} e^{-\frac{u^2}{4a^2t}} J_0 (2 \sqrt{u}) du $  \\ \midrule
+85 &  $\dfrac{e^{-\frac{a}{\sqrt{s}}}}{s^2}$  &  $\dfrac{1}{\sqrt{\pi t}a^3} \displaystyle{\int_0^{\infty}} u e^{-\frac{u^2}{4a^2t}} J_2 (2 \sqrt{u}) du $  \\ \midrule
+86 &  $\dfrac{e^{-\frac{a}{\sqrt{s}}}}{s^3}$  &  $\dfrac{1}{\sqrt{\pi t}a^5} \displaystyle{\int_0^{\infty}} u^2 e^{-\frac{u^2}{4a^2t}} J_4 (2 \sqrt{u}) du $  \\ \midrule
+87 &  $\dfrac{e^{-\frac{a}{\sqrt{s}}}}{s^4}$  &  $\dfrac{1}{\sqrt{\pi t}a^7} \displaystyle{\int_0^{\infty}} u^3 e^{-\frac{u^2}{4a^2t}} J_6 (2 \sqrt{u}) du $  \\ \midrule
+88 &  $\dfrac{e^{-\frac{a}{\sqrt{s}}}}{s^5}$  &  $\dfrac{1}{\sqrt{\pi t}a^9} \displaystyle{\int_0^{\infty}} u^4 e^{-\frac{u^2}{4a^2t}} J_8 (2 \sqrt{u}) du $  \\ \midrule
+89 &  $\dfrac{\ln [(s^2+a^2)/a^2]}{2s}$  &  $\textnormal{Ci}(at)$  \\ \midrule
+90 &  $\dfrac{\ln [(s+a)/a]}{s}$  &  $\textnormal{Ei}(at)$  \\ \midrule
+91 &  $\dfrac{-(\gamma + \ln s)}{s}$  &  $\ln t$  \\ \midrule
+92 &  $\dfrac{\pi^2}{6s} - \dfrac{(\gamma + \ln s)^2}{s}$  &  $\ln^2 t$  \\ \midrule
+93 &  $\dfrac{\ln s}{s}$  &  $-(\ln t + \gamma)$  \\ \midrule
+94 &  $\dfrac{\ln^2 s}{s}$  &  $(\ln t + \gamma)^2 - \dfrac{\pi^2}{6}$  \\ \midrule
+95 &  $\dfrac{\Gamma'(2) - \Gamma(2)\ln s}{s^2}$  &  $t \ln t$  \\ \midrule
+96 &  $\dfrac{\Gamma'(3) - \Gamma(3)\ln s}{s^3}$  &  $t^2 \ln t$  \\ \midrule
+97 &  $\dfrac{\Gamma'(4) - \Gamma(4)\ln s}{s^4}$  &  $t^3 \ln t$  \\ \midrule
+98 &  $\dfrac{\Gamma'(5) - \Gamma(5)\ln s}{s^5}$  &  $t^4 \ln t$  \\ \midrule
+99 &  $\arctan \bigg( \dfrac{a}{s} \bigg)$  &  $\dfrac{\sin at}{t}$  \\ \midrule
+100 &  $\dfrac{\arctan (\frac{a}{s})}{s}$  &  $\textnormal{Si}(at)$  \\ \midrule
+\textcolor{red}{101} &  $\dfrac{e^{\frac{a}{s}}}{\sqrt{s}} \; \textnormal{erfc}(\sqrt{\frac{a}{s}})$  &  $\dfrac{e^{-2 \sqrt{at}}}{\sqrt{\pi t}}$  \\ \midrule
+\textcolor{red}{102} &  $e^{\frac{s^2}{4a^2}} \; \textnormal{erfc}(\frac{s}{2a})$  &  $\dfrac{2a}{\sqrt{\pi}}e^{-a^2t^2}$  \\ \midrule
+\textcolor{red}{103} &  $\dfrac{e^{\frac{s^2}{4a^2}} \; \textnormal{erfc}(\frac{s}{2a})}{s}$  &  $\textnormal{erf}(at)$  \\ \midrule
+\textcolor{red}{104} &  $\dfrac{e^{as} \; \textnormal{erfc}(\frac{s}{2a})}{\sqrt{s}}$  &  $\dfrac{1}{\sqrt{\pi(t+a)}}$  \\ \midrule
+\textcolor{red}{105} &  $e^{as} \; \textnormal{Ei}(as)$  &  $\dfrac{1}{t+a}$  \\ \midrule
+\textcolor{red}{106} &  $\frac{1}{a}[\cos as (\frac{\pi}{2}-\textnormal{Si}(as)) - \sin as \; \textnormal{Ci}(as)]$  &  $\dfrac{1}{t^2+a^2}$  \\ \midrule
+\textcolor{red}{107} &  $\sin as (\frac{\pi}{2}-\textnormal{Si}(as)) + \cos as \; \textnormal{Ci}(as)$  &  $\dfrac{t}{t^2+a^2}$  \\ \midrule
+\textcolor{red}{108} &  $\frac{1}{s}[\sin as (\frac{\pi}{2}-\textnormal{Si}(as)) - \sin as \; \textnormal{Ci}(as)]$  &  $\arctan \bigg( \dfrac{t}{a} \bigg)$  \\ \midrule
+\textcolor{red}{109} &  $\frac{1}{s}[\sin as (\frac{\pi}{2}-\textnormal{Si}(as)) + \cos as \; \textnormal{Ci}(as)]$  &  $\dfrac12 \ln \bigg( \dfrac{t^2+a^2}{a^2} \bigg)$  \\ \midrule
+\textcolor{red}{110} &  $\big[ \frac{\pi}{2}-\textnormal{Si}(as)\big]^2 + \textnormal{Ci}^2(as)$  &  $\dfrac{1}{t} \ln \bigg( \dfrac{t^2+a^2}{a^2} \bigg)$  \\ \midrule
+111 &  $1$  &  $\delta(t)$  \\ \midrule
+112 &  $e^{-as}$  &  $\delta(t-a)$  \\ \midrule
+113 &  $\dfrac{e^{-as}}{s}$  &  $H(t-a)$  \\ \midrule
+114 &  $\dfrac{1}{as^2} \; \tanh \bigg( \dfrac{as}{2} \bigg)$  &  triangular wave  \\ \midrule
+115 &  $\dfrac{1}{s} \; \tanh \bigg( \dfrac{as}{2} \bigg)$  &  $\textnormal{sgn}(\sin \frac{\pi t}{a})$  \\ \midrule
+116 &  $\dfrac{\pi a}{a^2s^2 + \pi^2} \; \coth \bigg( \dfrac{as}{2} \bigg)$  &  $|\sin \frac{\pi t}{a}|$  \\ \midrule
+117 &  $\dfrac{\pi a}{(a^2s^2+\pi^2)(1-e^{-as})}$  &  $\sin \frac{\pi t}{a} (\frac12 \textnormal{sgn}(\sin \frac{\pi t}{a}) + \frac12)$  \\ \midrule
+
+\end{longtable}
+
+\begin{longtable}{lcc}
+
+
+\hline \multicolumn{1}{c} {} & \multicolumn{1}{c}{$F(s)$} & \multicolumn{1}{c}{$f(t)$} \\ \hline 
+\endfirsthead
+
+\hline \multicolumn{1}{c}{} &
+\multicolumn{1}{c}{$F(s)$} &
+\multicolumn{1}{c}{$f(t)$} \\ \hline 
+\endhead
+
+\hline \hline
+\endlastfoot
+
+
+118 &  $\dfrac{1}{as^2} - \dfrac{e^{-as}}{s(1-e^{-as}))}$  &  $\frac12 \; \textnormal{sawtooth}(\frac{2 \pi t}{a}) + \frac12$  \\ \midrule
+119 &  $\dfrac{e^{-as}(1-e^{-\varepsilon s})}{s}$  &  $H(t-a)H(a+\varepsilon -t)$  \\ \midrule
+120 &  $\dfrac{1}{s(1-e^{-as})}$  &  $\lceil \frac{t}{a} \rceil$  \\ \midrule
+121 &  $\dfrac{e^{-s}+e^{-2s}}{s(1-e^{-as})^2}$  &  $\lfloor t \rfloor^2$  \\ \midrule
+122 &  $\dfrac{1-e^{-s}}{s(1-ae^{-s})}$  &  $a^{\lfloor t \rfloor}$  \\ \midrule
+123 &  $\dfrac{\pi a (1+e^{-as})}{a^2s^2+\pi^2}$  &  $\sin \big( \frac{\pi t}{a} \big) \goodchi_{[0,a]}(t)$  \\ \midrule
+124 &  $\dfrac{1}{\sqrt{s+a}+\sqrt{s+b}}$  &  $\dfrac{e^{-bt}-e^{-at}}{2(b-a)\sqrt{\pi t^3}}$  \\ \midrule
+125 &  $\dfrac{1}{\sqrt{s-a}+b}$  &  $e^{at} \big[ \frac{1}{\sqrt{\pi t}} - be^{B^2t} \; \textnormal{erfc}(b \sqrt{t}) \big]$  \\ \midrule
+126 &  $\dfrac{e^{b(s-\sqrt{s^2-a^2})}}{\sqrt{s^2+a^2}}$  &  $J_0 (a \sqrt{t(t+2b)})$  \\ \midrule
+127 &  $\dfrac{e^{-b \sqrt{s^2-a^2}}}{\sqrt{s^2+a^2}}$  &  $J_0 (a \sqrt{t^2-b^2}) \goodchi_{[b,\infty]}(t)$  \\ \midrule
+128 &  $\ln \bigg( \dfrac{s+a}{s+b} \bigg)$  &  $\dfrac{e^{-bt}-e^{-at}}{t}$  \\ \midrule
+129 &  $\ln \bigg( \dfrac{s^2+a^2}{s^2+b^2} \bigg)$  &  $-\dfrac{2(\cos at - \cos bt)}{t}$  \\ \midrule
+130 &  $\dfrac{1}{(s-b)^2+a^2}$  &  $\dfrac{e^{bt} \sin at}{a}$  \\ \midrule
+131 &  $\dfrac{s-b}{(s-b)^2+a^2}$  &  $e^{bt} \cos at$  \\ \midrule
+132 &  $\dfrac{1}{(s-b)^2-a^2}$  &  $\dfrac{e^{bt} \sinh at}{a}$  \\ \midrule
+133 &  $\dfrac{s-b}{(s-b)^2-a^2}$  &  $e^{bt} \cosh at$  \\ \midrule
+134 &  $\dfrac{1}{(s-a)(s-b)}$  &  $\dfrac{e^{bt}-e^{at}}{b-a}$  \\ \midrule
+135 &  $\dfrac{s}{(s-a)(s-b)}$  &  $\dfrac{be^{bt}-ae^{at}}{b-a}$  \\ \midrule
+136 &  $\dfrac{\sinh bs}{s \sinh as}$  &  $ \frac{b}{a}+\frac{2}{\pi} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^n}{n} \sin \frac{n \pi b}{a} \cos \frac{n \pi t}{a}  $  \\ \midrule
+137 &  $\dfrac{\sinh bs}{s \cosh as}$  &  $\frac{4}{\pi} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n+1}}{2n-1} \sin  \frac{(2n-1) \pi b}{2a} \sin  \frac{(2n-1) \pi t}{2a}  $  \\ \midrule
+138 &  $\dfrac{\cosh bs}{s \sinh as}$  &  $ \frac{t}{a}+\frac{2}{\pi} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^n}{n} \cos \frac{n \pi b}{a} \sin \frac{n \pi t}{a}  $  \\ \midrule
+139 &  $\dfrac{\cosh bs}{s \cosh as}$  &  $1 + \frac{4}{\pi} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n}}{2n-1} \cos  \frac{(2n-1) \pi b}{2a} \cos  \frac{(2n-1) \pi t}{2a}  $  \\ \midrule
+140 &  $\dfrac{\sinh bs}{s^2 \sinh as}$  &  $ \frac{t}{a}+\frac{2a}{\pi^2} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^n}{n^2} \sin \frac{n \pi b}{a} \sin \frac{n \pi t}{a}  $  \\ \midrule
+141 &  $\dfrac{\sinh bs}{s^2 \cosh as}$  &  $b + \frac{8a}{\pi^2} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n}}{(2n-1)^2} \sin  \frac{(2n-1) \pi b}{2a} \cos  \frac{(2n-1) \pi t}{2a}$  \\ \midrule
+142 &  $\dfrac{\cosh bs}{s^2 \sinh as}$  &  $ \frac{t^2}{2a}+\frac{2a}{\pi^2} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^n}{n^2} \cos \frac{n \pi b}{a} \big( 1- \cos \frac{n \pi t}{a}$ \big) \\ \midrule
+143 &  $\dfrac{\cosh bs}{s^2 \cosh as}$  &  $t + \frac{8a}{\pi^2} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n}}{(2n-1)^2} \cos  \frac{(2n-1) \pi b}{2a} \sin  \frac{(2n-1) \pi t}{2a}$  \\ \midrule
+144 &  $\dfrac{\cosh bs}{s^3 \cosh as}$  &  $\frac12(t^2+b^2+a^2) + \frac{16a^2}{\pi^3} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n}}{(2n-1)^3} \cos  \frac{(2n-1) \pi b}{2a} \cos  \frac{(2n-1) \pi t}{2a}$  \\ \midrule
+145 &  $\dfrac{\sinh b \sqrt{s}}{\sinh a \sqrt{s}}$  &  $ \frac{2 \pi}{a^2} \displaystyle{\sum_{n=1}^{\infty}} \textstyle (-1)^{n-1}n e^{-\frac{n^2 \pi^2 t}{a^2}} \sin \frac{n \pi b}{a}$ \\ \midrule
+146 &  $\dfrac{\cosh b \sqrt{s}}{\cosh a \sqrt{s}}$  &  $ \frac{\pi}{a^2} \displaystyle{\sum_{n=1}^{\infty}} \textstyle (-1)^{n-1}(2n-1) e^{-\frac{(2n-1)^2 \pi^2 t}{4a^2}} \cos \frac{(2n-1) \pi b}{2a}$  \\ \midrule
+147 &  $\dfrac{\sinh b \sqrt{s}}{\sqrt{s} \cosh a \sqrt{s}}$  &  $\frac{2}{a} \displaystyle{\sum_{n=1}^{\infty}} \textstyle (-1)^{n-1} e^{-\frac{(2n-1)^2 \pi^2 t}{4a^2}} \sin \frac{(2n-1) \pi b}{2a}$  \\ \midrule
+148 &  $\dfrac{\cosh b \sqrt{s}}{\sqrt{s} \sinh a \sqrt{s}}$  &  $\frac{1}{a}+\frac{2}{a} \displaystyle{\sum_{n=1}^{\infty}} \textstyle (-1)^nn e^{-\frac{n^2 \pi^2 t}{a^2}} \sin \frac{n \pi b}{a}$  \\ \midrule
+149 &  $\dfrac{\sinh b \sqrt{s}}{s \sinh a \sqrt{s}}$  &  $\frac{b}{a}+\frac{2}{\pi} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n}}{n} e^{-\frac{n^2 \pi^2 t}{a^2}} \sin \frac{n \pi b}{a}$  \\ \midrule
+150 &  $\dfrac{\cosh b \sqrt{s}}{s \cosh a \sqrt{s}}$  &  $1+ \frac{4}{\pi} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n-1}}{(2n-1)} e^{-\frac{(2n-1)^2 \pi^2 t}{4a^2}} \cos \frac{(2n-1) \pi b}{2a}$  \\ \midrule
+151 &  $\dfrac{\sinh b \sqrt{s}}{s^2 \sinh a \sqrt{s}}$  &  $\frac{bt}{a}+\frac{2a^2}{\pi^3} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n}}{n^3} \big( 1- e^{-\frac{n^2 \pi^2 t}{a^2}} \big) \sin \frac{n \pi b}{a}$  \\ \midrule
+152 &  $\dfrac{\cosh b \sqrt{s}}{s^2 \cosh a \sqrt{s}}$  &  $\frac12(b^2-a^2)+t-\frac{16a^2}{\pi^3} \displaystyle{\sum_{n=1}^{\infty}} \textstyle \frac{(-1)^{n-1}}{(2n-1)^3} e^{-\frac{(2n-1)^2 \pi^2 t}{4a^2}} \cos \frac{(2n-1) \pi b}{2a}$  \\ \midrule
+153 &  $\dfrac{1}{s(1+e^{-as})}$  &  $\frac12 \textnormal{sgn}(\sin \frac{\pi t}{a}) + \frac12$  \\ \midrule
+154 &  $\sqrt{s+a}-\sqrt{s+b}$  &  $\dfrac{e^{-bt}-e^{-at}}{2 \sqrt{\pi t^3}}$  \\ \midrule
+155 &  $\dfrac{\ln (s-1+\sqrt{s^2-2s})}{\sqrt{s^2-2s}}$  &  $e^t K_0(t)$  \\ \midrule
+156 &  $s^{-(a+\frac12)}$  &  $\dfrac{2^a t^{a-\frac12}}{(2n-1)!! \sqrt{\pi}}$  \\ \midrule
+157 &  $\dfrac{1}{s} \bigg( \dfrac{s-1}{s} \bigg)^a$  &  $L_a(t)$  \\ \midrule
+158 &  $\dfrac{s}{(s+a)^{\frac32}}$  &  $\dfrac{e^{-at}(1-2at)}{\sqrt{\pi t}}$  \\ \midrule
+159 &  $\dfrac{\sqrt{s}}{s-a}$  &  $\dfrac{1}{\sqrt{\pi t}} + \sqrt{a}e^{at} \; \textnormal{erf}(\sqrt{at})$  \\ \midrule
+160 &  $\dfrac{1}{\sqrt{s}(\sqrt(s)+a)}$  &  $e^{a^2t}\; \textnormal{erf}(a \sqrt{t})$  \\ \midrule
+161 &  $\dfrac{b^2-a^2}{(s-a^2)(b+\sqrt{s})}$  &  $e^{a^2t}(b-a \; \textnormal{erf}(a \sqrt{t})) - b e^{b^2t}\; \textnormal{erfc}(b \sqrt{t}) $  \\ \midrule
+162 &  $\dfrac{1}{(s+a)\sqrt{s+b}}$  &  $\dfrac{1}{\sqrt{b-a}}e^{-at}\; \textnormal{erf}(\sqrt{b-a} \sqrt{t})$  \\ \midrule
+163 &  $\dfrac{b^2-a^2}{\sqrt{s}(s-a^2)(b+\sqrt{s})}$  &  $e^{a^2t}(\frac{b}{a} \; \textnormal{erf}(a \sqrt{t})-1) + e^{b^2t}\; \textnormal{erfc}(b \sqrt{t})$  \\ \midrule
+164 &  $\dfrac{(1-s)}{s^{\frac32}}$  &  $\dfrac{1}{2 \sqrt{\pi}} H_2(\sqrt{t})$  \\ \midrule
+165 &  $\dfrac{(1-s)^2}{s^{\frac52}}$  &  $\dfrac{1}{12 \sqrt{\pi}} H_4(\sqrt{t})$  \\ \midrule
+166 &  $\dfrac{(1-s)^3}{s^{\frac72}}$  &  $\dfrac{1}{120 \sqrt{\pi}} H_6(\sqrt{t})$  \\ \midrule
+167 &  $\dfrac{(1-s)^4}{s^{\frac92}}$  &  $\dfrac{1}{1680 \sqrt{\pi}} H_8(\sqrt{t})$  \\ \midrule
+168 &  $\dfrac{(1-s)}{s^{\frac52}}$  &  $\dfrac{1}{6 \sqrt{\pi}} H_3(\sqrt{t})$  \\ \midrule
+169 &  $\dfrac{(1-s)^2}{s^{\frac72}}$  &  $\dfrac{1}{60 \sqrt{\pi}} H_5(\sqrt{t})$  \\ \midrule
+170 &  $\dfrac{(1-s)^3}{s^{\frac92}}$  &  $\dfrac{1}{840 \sqrt{\pi}} H_7(\sqrt{t})$  \\ \midrule
+171 &  $\dfrac{(1-s)^4}{s^{\frac{11}{2}}}$  &  $\dfrac{1}{15120 \sqrt{\pi}} H_9(\sqrt{t})$  \\ \midrule
+172 &  $\dfrac{\sqrt{s+2a}}{\sqrt{s}}$  &  $ae^{-at}\big[I_1(at)+I_0(at)  \big]$  \\ \midrule
+173 &  $\dfrac{1}{\sqrt{s+a} \sqrt{s+b}}$  &  $e^{-\frac12(a+b)t}I_0 \big(\frac{a-b}{2} t\big)$  \\ \midrule
+174 &  $\dfrac{\Gamma(\frac32)}{(s+a)^{\frac32}(s+b)^{\frac32}}$  &  $\sqrt(\pi) \bigg(\dfrac{t}{a-b}\bigg) e^{-\frac12(a+b)t}I_1 \big(\frac{a-b}{2} t\big)$  \\ \midrule
+175 &  $\dfrac{\Gamma(\frac52)}{(s+a)^{\frac52}(s+b)^{\frac52}}$  &  $\sqrt(\pi) \bigg(\dfrac{t}{a-b}\bigg)^2 e^{-\frac12(a+b)t}I_2 \big(\frac{a-b}{2} t\big)$  \\ \midrule
+176 &  $\dfrac{\Gamma(\frac72)}{(s+a)^{\frac72}(s+b)^{\frac72}}$  &  $\sqrt(\pi) \bigg(\dfrac{t}{a-b}\bigg)^3 e^{-\frac12(a+b)t}I_3 \big(\frac{a-b}{2} t\big)$  \\ \midrule
+177 &  $\dfrac{\Gamma(\frac92)}{(s+a)^{\frac92}(s+b)^{\frac92}}$  &  $\sqrt(\pi) \bigg(\dfrac{t}{a-b}\bigg)^4 e^{-\frac12(a+b)t}I_4 \big(\frac{a-b}{2} t\big)$  \\ \midrule
+178 &  $\dfrac{1}{(s+a)^{\frac12}(s+b)^{\frac32}}$  &  $t e^{-\frac12(a+b)t} \big( I_0\big(\frac{a-b}{2} t\big) + I_1 \big(\frac{a-b}{2} t\big) \big)$  \\ \midrule
+179 &  $\dfrac{\sqrt{s+2a}-\sqrt{s}}{\sqrt{s+2a}+\sqrt{s}}$  &  $\dfrac{e^{-at}}{t} I_1(at)$  \\ \midrule
+180 &  $\dfrac{\sqrt{a-b}}{\sqrt{\sqrt{s+a}+\sqrt{s+b}}}$  &  $\dfrac{e^{-\frac12(a+b)t}}{2t} I_{\frac12}\big(\frac{a-b}{2} t\big)$  \\ \midrule
+181 &  $\dfrac{(a-b)^{\frac32}}{(\sqrt{s+a}+\sqrt{s+b})^{\frac32}}$  &  $\dfrac{3e^{-\frac12(a+b)t}}{2t} I_{\frac32}\big(\frac{a-b}{2} t\big)$  \\ \midrule
+182 &  $\dfrac{(a-b)^{\frac52}}{(\sqrt{s+a}+\sqrt{s+b})^{\frac52}}$  &  $\dfrac{5e^{-\frac12(a+b)t}}{2t} I_{\frac52}\big(\frac{a-b}{2} t\big)$  \\ \midrule
+183 &  $\dfrac{(a-b)^{\frac72}}{(\sqrt{s+a}+\sqrt{s+b})^{\frac72}}$  &  $\dfrac{7e^{-\frac12(a+b)t}}{2t} I_{\frac72}\big(\frac{a-b}{2} t\big)$  \\ \midrule
+184 &  $\dfrac{(\sqrt{s+a}+\sqrt{s})^{-1}}{\sqrt{s}\sqrt{s+a}}$  &  $\dfrac{e^{-\frac12at}}{\sqrt{a}}I_{\frac12}(\frac12at)$  \\ \midrule
+185 &  $\dfrac{(\sqrt{s+a}+\sqrt{s})^{-3}}{\sqrt{s}\sqrt{s+a}}$  &  $\dfrac{e^{-\frac12at}}{a^{\frac32}}I_{\frac32}(\frac12at)$  \\ \midrule
+186 &  $\dfrac{(\sqrt{s+a}+\sqrt{s})^{-5}}{\sqrt{s}\sqrt{s+a}}$  &  $\dfrac{e^{-\frac12at}}{a^{\frac52}}I_{\frac52}(\frac12at)$  \\ \midrule
+187 &  $\dfrac{(\sqrt{s+a}+\sqrt{s})^{-7}}{\sqrt{s}\sqrt{s+a}}$  &  $\dfrac{e^{-\frac12at}}{a^{\frac72}}I_{\frac72}(\frac12at)$  \\ \midrule
+188 &  $\dfrac{1}{(s^2+a^2)^{\frac52}}$  &  $\dfrac{\sqrt{\pi}}{\Gamma(\frac52)} \bigg(\dfrac{t}{2a}\bigg) J_2(at)$  \\ \midrule
+189 &  $\dfrac{1}{(s^2+a^2)^{\frac72}}$  &  $\dfrac{\sqrt{\pi}}{\Gamma(\frac72)} \bigg(\dfrac{t}{2a}\bigg) J_3(at)$  \\ \midrule
+190 &  $\dfrac{1}{(s^2+a^2)^{\frac92}}$  &  $\dfrac{\sqrt{\pi}}{\Gamma(\frac92)} \bigg(\dfrac{t}{2a}\bigg) J_4(at)$  \\ \midrule
+191 &  $\dfrac{1}{(s^2+a^2)^{\frac{11}{2}}}$  &  $\dfrac{\sqrt{\pi}}{\Gamma(\frac{11}{2})} \bigg(\dfrac{t}{2a}\bigg) J_5(at)$  \\ \midrule
+192 &  $(\sqrt{s^2+a^2}-s)$  &  $\dfrac{a}{t} J_1(at)$  \\ \midrule
+193 &  $(\sqrt{s^2+a^2}-s)^{\frac32}$  &  $\dfrac{3a^{\frac32}}{2t} J_{\frac32}(at)$  \\ \midrule
+194 &  $(\sqrt{s^2+a^2}-s)^2$  &  $\dfrac{2a^2}{t} J_2(at)$  \\ \midrule
+195 &  $(\sqrt{s^2+a^2}-s)^{\frac52}$  &  $\dfrac{5a^{\frac52}}{2t}J_{\frac52}(at)$  \\ \midrule
+196 &  $(\sqrt{s^2+a^2}-s)^3$  &  $\dfrac{3a^3}{t} J_3(at)$  \\ \midrule
+197 &  $\dfrac{e^{-as}}{s^2}$  &  $(t-a)u(t-a)$  \\ \midrule
+198 &  $\dfrac{e^{-as}}{s^{\frac32}}$  &  $\dfrac{\sqrt{t-a}}{\Gamma(\frac32)}u(t-a)$  \\ \midrule
+199 &  $\dfrac{e^{-as}}{s^3}$  &  $\dfrac{(t-a)^2}{\Gamma(3)}u(t-a)$  \\ \midrule
+200 &  $\dfrac{e^{\frac{a}{s}}}{\sqrt{s}}$  &  $\dfrac{\cosh 2\sqrt{at}}{\sqrt{\pi t}}$  \\ \midrule
+201 &  $\dfrac{e^{\frac{a}{s}}}{s^{\frac32}}$  &  $\dfrac{\sinh 2 \sqrt{at}}{\sqrt{\pi a}}$  \\ \midrule
+202 &  $\dfrac{e^{\frac{a}{s}}}{s^2}$  &  $\sqrt{\dfrac{t}{a}}I_1(2 \sqrt{at})$  \\ \midrule
+203 &  $\dfrac{e^{\frac{a}{s}}}{s^{\frac52}}$  &  $\bigg( \dfrac{t}{a} \bigg)^2 I_{\frac32}(2 \sqrt{at})$  \\ \midrule
+204 &  $\sqrt{s}e^{-a \sqrt{s}}$  &  $\dfrac{e^{-\frac{a^2}{4t}}}{4 \sqrt{\pi t^3}}H_2 \big( \frac{a}{2\sqrt{t}} \big)$  \\ \midrule
+205 &  $se^{-a \sqrt{s}}$  &  $\dfrac{e^{-\frac{a^2}{4t}}}{8 \sqrt{\pi t^4}}H_3 \big( \frac{a}{2\sqrt{t}} \big)$  \\ \midrule
+206 &  $s^{\frac32}e^{-a \sqrt{s}}$  &  $\dfrac{e^{-\frac{a^2}{4t}}}{16 \sqrt{\pi t^5}}H_4 \big( \frac{a}{2\sqrt{t}} \big)$  \\ \midrule
+207 &  $s^2e^{-a \sqrt{s}}$  &  $\dfrac{e^{-\frac{a^2}{4t}}}{32 \sqrt{\pi t^6}}H_5 \big( \frac{a}{2\sqrt{t}} \big)$  \\ \midrule
+208 &  $\dfrac{e^{-b\sqrt{s}}}{a+\sqrt{s}}$  &  $\frac{1}{\sqrt{\pi t}}e^{-\frac{b^2}{4t}}-ae^{ab}e^{a^2t} \; \textnormal{erfc} \big( a \sqrt{t} + \frac{b}{2 \sqrt{t}}  \big)$  \\ \midrule
+209 &  $\dfrac{ae^{-b\sqrt{s}}}{s(a+\sqrt{s})}$  &  $\textnormal{erfc}\big( \frac{b}{2 \sqrt{t}} \big) -e^{ab}e^{a^2t} \; \textnormal{erfc} \big( a \sqrt{t} + \frac{b}{2 \sqrt{t}}  \big)$  \\ \midrule
+210 &  $\dfrac{e^{-b\sqrt{s}}}{\sqrt{s}(a+\sqrt{s})}$  &  $e^{ab}e^{a^2t} \; \textnormal{erfc} \big( a \sqrt{t} + \frac{b}{2 \sqrt{t}}  \big)$  \\ \midrule
+211 &  $\dfrac{e^{-b\sqrt{s(s+a)}}}{\sqrt{s(s+a)}}$  &  $e^{-\frac12at}I_0(\frac12a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+212 &  $\dfrac{e^{-b\sqrt{s^2+a^2}}}{\sqrt{s^2+a^2}}$  &  $J_0(a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+213 &  $\dfrac{e^{-b\sqrt{s^2-a^2}}}{\sqrt{s^2-a^2}}$  &  $I_0(a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+214 &  $\dfrac{e^{-b(\sqrt{s^2+a^2}-s)}}{\sqrt{s^2+a^2}}$  &  $J_0(a\sqrt{t^2+2bt})$  \\ \midrule
+215 &  $e^{-bs}-e^{-b\sqrt{s^2+a^2}}$  &  $\dfrac{ab}{\sqrt{t^2-b^2}}J_1(a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+216 &  $e^{-b\sqrt{s^2-a^2}} - e^{-bs}$  & $\dfrac{ab}{\sqrt{t^2-b^2}}I_1(a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+217 &  $\dfrac{a e^{-b\sqrt{s^2+a^2}}}{\sqrt{s^2+a^2}(\sqrt{s^2+a^2}+s)}$  &  $\sqrt{\dfrac{t-b}{t+b}}J_1(a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+218 &  $\dfrac{a^2 e^{-b\sqrt{s^2+a^2}}}{\sqrt{s^2+a^2}(\sqrt{s^2+a^2}+s)^2}$  &  $ \bigg(\dfrac{t-b}{t+b}\bigg) J_2(a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+219 &  $\dfrac{a^3 e^{-b\sqrt{s^2+a^2}}}{\sqrt{s^2+a^2}(\sqrt{s^2+a^2}+s)^3}$  &  $ \bigg(\dfrac{t-b}{t+b}\bigg)^{\frac32} J_3(a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+220 &  $\dfrac{a^4 e^{-b\sqrt{s^2+a^2}}}{\sqrt{s^2+a^2}(\sqrt{s^2+a^2}+s)^4}$  &  $ \bigg(\dfrac{t-b}{t+b}\bigg)^2 J_4(a\sqrt{t^2-b^2})u(t-b)$  \\ \midrule
+221 &  $\dfrac{\ln s}{s^2}$  &  $\dfrac{t}{\Gamma(2)} [\Psi(2) - \ln t]$  \\ \midrule
+222 &  $\dfrac{\ln s}{s^3}$  &  $\dfrac{t^2}{\Gamma(3)} [\Psi(3) - \ln t]$  \\ \midrule
+223 &  $\dfrac{\ln s}{s^4}$  &  $\dfrac{t^3}{\Gamma(4)} [\Psi(4) - \ln t]$  \\ \midrule
+224 &  $\dfrac{\ln s}{s-a}$  &  $e^{at} (\ln a + \textnormal{Ei}(at))$  \\ \midrule
+225 &  $\dfrac{\ln s}{s^2+1}$  &  $\cos t \; \textnormal{Si}(t) - \sin t \; \textnormal{Ci}(t)$  \\ \midrule
+226 &  $\dfrac{s \ln s}{s^2+1}$  &  $-\sin t \; \textnormal{Si}(t) - \cos t \; \textnormal{Ci}(t)$  \\ \midrule
+227 &  $\dfrac{\ln(s^2+a^2)}{s^2}$  &  $\dfrac{2}{a}(at \ln a + \sin at - at \; \textnormal{Ci}(at))$  \\ \midrule
+228 &  $\ln \bigg( \dfrac{s^2-a^2}{s^2} \bigg)$  &  $\dfrac{2-2\cosh at}{t}$  \\ \midrule
+229 &  $K_0(bs)$  &  $\dfrac{1}{\sqrt{t^2-b^2}}u(t-b)$  \\ \midrule
+230 &  $K_0(b \sqrt{s})$  &  $\dfrac{1}{2t}e^{-\frac{b^2}{4t}}$  \\ \midrule
+231 &  $\dfrac{1}{s}e^{bs}K_1(bs)$  &  $\dfrac{\sqrt{t(t+2b)}}{b}$  \\ \midrule
+232 &  $\dfrac{1}{\sqrt{s}}K_1(b \sqrt{s})$  &  $\dfrac{e^{-\frac{b^2}{4t}}}{b}$  \\ \midrule
+233 &  $\dfrac{1}{\sqrt{s}}e^{\frac{b}{s}}K_0(\frac{b}{s})$  &  $\dfrac{2}{\sqrt{\pi t}}K_0(2 \sqrt{2bt})$  \\ \midrule
+234 &  $\pi e^{-bs}I_0(bs)$  &  $\dfrac{1}{\sqrt{t(2b-t)}}[u(t)-u(t-2b)]$  \\ \midrule
+235 &  $e^{-bs}I_1(bs)$  &  $\dfrac{b-t}{\pi b \sqrt{t(2b-t)}}[u(t)-u(t-2b)]$  \\ \midrule
+
+\end{longtable}
+
+Reference:
+\begin{itemize}
+\item $u(t)$ is the Heaviside function
+\item $J_n(t)$ is the Bessel function of the first kind, of order $n$ 
+\item $I_n(t)$ is the modified Bessel function of the first kind, of order $n$
+\item $K_n(t)$ is the modified Bessel function of the second kind, of order $n$
+\item $H_n(t)$ is the $n$th Hermite polynomial
+\item Ei($x$) is the exponential integral function
+\item Si($x$) is the sine integral function
+\item Ci($x$) is the cosine integral function
+\item erf($x$) is the error function
+\item erfc($x$) is the complementary error function
+\item $\Gamma(x)$ is the gamma function
+\item $\Psi(x)$ is the logarithmic derivative of the gamma function
+\end{itemize}
+
+
+
+\end{center}
+\end{document}

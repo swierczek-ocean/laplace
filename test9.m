@@ -28,7 +28,7 @@ parfor jj=1:num_test
     True = master_inverse_laplace_fcn(t,a,b,ll,eps);
     fun = @(x)master_laplace_fcn(x,a,b,ll,eps);
     NAB = nabilt(fun,t,ub,ll,sw,Sings);
-    error1(jj,:) = [LaplacePlot(True,NAB,t,ll,ub),ll];
+    error1(jj,:) = [LaplacePlot(True,NAB,t,ll,ub,a,b),ll];
 end
 %%
 

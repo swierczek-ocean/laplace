@@ -1,4 +1,4 @@
-function error = LaplacePlot2(True,Weeks,T,char)
+function error = LaplacePlot2(True,Weeks,T,char,a,b,sw)
 colors
 
 Q = sort(True);
@@ -11,11 +11,11 @@ if(Q(end)-Q(1)>1e5)&&(Q(1)>0)&&(Z(1)>0)
     hold on
     h2 = semilogy(T,Weeks,'.','MarkerSize',14,'Color',Color(:,18));
     semilogy(T,Weeks,'*','MarkerSize',7,'Color',Color(:,18));
-    title(['Laplace function ',num2str(char)])
+    title(['L',num2str(char),' Weeks method ',num2str(sw),' a=',num2str(a),' b=',num2str(b)])
     xlabel('time')
     ylabel('f(t)')
     legend([h1(1),h2(1)],'True f(t)','Weeks')
-    print(['L',num2str(char),'_approx_v_true_Weeks'],'-djpeg')
+    print(['L',num2str(char),' sw=',num2str(sw),' a=',num2str(a),' b=',num2str(b),'_approx_v_true_Weeks'],'-djpeg')
     hold off
     
 else
@@ -25,11 +25,11 @@ else
     hold on
     h2 = plot(T,Weeks,'.','MarkerSize',14,'Color',Color(:,18));
     plot(T,Weeks,'*','MarkerSize',7,'Color',Color(:,18));
-    title(['Laplace function ',num2str(char)])
+    title(['L',num2str(char),' Weeks method ',num2str(sw),' a=',num2str(a),' b=',num2str(b)])
     xlabel('time')
     ylabel('f(t)')
     legend([h1(1),h2(1)],'True f(t)','Weeks')
-    print(['L',num2str(char),'_approx_v_true_Weeks'],'-djpeg')
+    print(['L',num2str(char),' sw=',num2str(sw),' a=',num2str(a),' b=',num2str(b),'_approx_v_true_Weeks'],'-djpeg')
     hold off
     
 end
@@ -43,10 +43,10 @@ figure
 semilogy(T,real(BromRelError),'.','MarkerSize',12,'Color',Color(:,18))
 hold on
 semilogy(T,real(BromRelError),'*','MarkerSize',6,'Color',Color(:,18))
-title(['Laplace function ',num2str(char),' error'])
+title(['L ',num2str(char),' Weeks method ',num2str(sw),' a=',num2str(a),' b=',num2str(b),' error'])
 xlabel('time')
 ylabel('Relative error')
-print(['L',num2str(char),'_error_Weeks'],'-djpeg')
+print(['L',num2str(char),' sw=',num2str(sw),' a=',num2str(a),' b=',num2str(b),'_error_Weeks'],'-djpeg')
 hold off
 
 end

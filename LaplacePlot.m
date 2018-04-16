@@ -1,4 +1,4 @@
-function error = LaplacePlot(True,NAB,T,char,ub)
+function error = LaplacePlot(True,NAB,T,char,ub,a,b)
 colors
 
 Q = sort(True);
@@ -11,11 +11,11 @@ if(Q(end)-Q(1)>1e5)&&(Q(1)>0)&&(Z(1)>0)
     hold on
     h2 = semilogy(T,NAB,'.','MarkerSize',14,'Color',Color(:,18));
     semilogy(T,NAB,'*','MarkerSize',7,'Color',Color(:,18));
-    title(['Laplace function ',num2str(char),' LOC=',num2str(2*ub)])
+    title(['Laplace function ',num2str(char),' LOC=',num2str(2*ub),' a=',num2str(a),' b=',num2str(b)])
     xlabel('time')
     ylabel('f(t)')
     legend([h1(1),h2(1)],'True f(t)','Bromwich adapt')
-    print(['L',num2str(char),' ',num2str(2*ub),'_approx_v_true'],'-djpeg')
+    print(['L',num2str(char),' ',num2str(2*ub),' a=',num2str(a),' b=',num2str(b),'_approx_v_true'],'-djpeg')
     hold off
     
 else
@@ -25,11 +25,11 @@ else
     hold on
     h2 = plot(T,NAB,'.','MarkerSize',14,'Color',Color(:,18));
     plot(T,NAB,'*','MarkerSize',7,'Color',Color(:,18));
-    title(['Laplace function ',num2str(char),' LOC=',num2str(2*ub)])
+    title(['Laplace function ',num2str(char),' LOC=',num2str(2*ub),' a=',num2str(a),' b=',num2str(b)])
     xlabel('time')
     ylabel('f(t)')
     legend([h1(1),h2(1)],'True f(t)','Bromwich adapt')
-    print(['L',num2str(char),' ',num2str(2*ub),'_approx_v_true'],'-djpeg')
+    print(['L',num2str(char),' ',num2str(2*ub),' a=',num2str(a),' b=',num2str(b),'_approx_v_true'],'-djpeg')
     hold off
     
 end
@@ -43,10 +43,10 @@ figure
 semilogy(T,real(BromRelError),'.','MarkerSize',12,'Color',Color(:,18))
 hold on
 semilogy(T,real(BromRelError),'*','MarkerSize',6,'Color',Color(:,18))
-title(['Laplace function ',num2str(char),' error,',' LOC=',num2str(2*ub)])
+title(['Laplace function ',num2str(char),' error,',' LOC=',num2str(2*ub),' a=',num2str(a),' b=',num2str(b)])
 xlabel('time')
 ylabel('Relative error')
-print(['L',num2str(char),' ',num2str(2*ub),'_error'],'-djpeg')
+print(['L',num2str(char),' ',num2str(2*ub),' a=',num2str(a),' b=',num2str(b),'_error'],'-djpeg')
 hold off
 
 end

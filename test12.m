@@ -10,7 +10,7 @@ colors
 
 %% setting up time values and shifts
 global a, global b, global eps
-a = 0;
+a = 1;
 b = 1;
 eps = 0.5;
 Sings = makesings(a,b);
@@ -32,7 +32,7 @@ for jj=1:num_test
     fun2 = 'laplacefcn(s)';
 %    Weeks = WeeksMethod(fun2,t,0.0000001,sw);
     for kk=1:length
-        Weeks(kk) = wfnWeeksCoreSigmab(fun2,t(kk),512,0.5,Sings(ll)+20);
+        Weeks(kk) = wfnWeeksCoreSigmab(fun2,t(kk),512,0.5,Sings(ll)+1/t(kk));
         % Weeks(kk) = WeeksMethod(fun2,t(kk),0.0000001,sw);
     end
     errorW(jj,:) = [LaplacePlot2(True,real(Weeks),t,ll,a,b,sw),ll];

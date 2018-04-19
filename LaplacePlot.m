@@ -34,7 +34,7 @@ else
     
 end
 
-ind = find(abs(True)<10e-03);
+ind = find(abs(True)==0);
 BromRelError = abs(NAB-True)./abs(True);
 BromRelError(ind) = abs(NAB(ind)-True(ind));
 error = BromRelError;

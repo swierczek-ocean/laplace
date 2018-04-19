@@ -10,16 +10,16 @@ colors
 
 %% setting up time values and shifts
 global a, global b, global eps
-a = 3;
-b = 5;
+a = 0;
+b = 2;
 eps = 0.5;
 Sings = makesings(a,b);
 t = 1.15:0.25:15.15;
 timelength = size(t,2);
 ub = 100;
-sw = 2;
+sw = 0;
 start = 1;
-num_test = 100;
+num_test = 5;
 errorW = zeros(num_test,timelength+1);
 Weeks = zeros(1,timelength);
 RET = 0.02*ones(1,timelength);

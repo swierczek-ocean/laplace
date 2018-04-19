@@ -9,8 +9,8 @@ colors
 %%
 
 %% setting up time values and shifts
-a = 5;
-b = 3;
+a = 3;
+b = 5;
 eps = 0.5;
 Sings = makesings(a,b);
 % t = 1.1:0.125:7.1;
@@ -18,8 +18,8 @@ t = 1.15:0.25:15.15;
 timelength = size(t,2);
 ub = 100;
 sw = 2;
-start = 111;
-num_test = 42;
+start = 153;
+num_test = 83;
 error = zeros(num_test,timelength+1);
 %%
 

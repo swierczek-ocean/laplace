@@ -29,22 +29,59 @@ set(0,'DefaultFigureVisible','on')
 
 
 
-n = 100;
+% n = 100;
+% 
+% dt = 0:pi/50:(2*pi-pi/50);
+% 
+% Theta = exp(1i.*dt);
+% 
+% figure
+% plot(Theta,'.','MarkerSize',8)
+% axis([-1.5 1.5 -1.5 1.5])
+% xlabel('x')
+% ylabel('iy')
+% title('equidistant partition of unit circle')
+% 
 
-dt = 0:pi/50:(2*pi-pi/50);
 
-Theta = exp(1i.*dt);
+% load('error1_100.mat')
+% error1 = error;
+% load('error111_152.mat')
+% error2 = error;
+% load('error153_235.mat')
+% error3 = error;
+% error_total = [error1;error2;error3];
+% vector = error_total(:,1:end-1);
+% vector = reshape(vector,225*57,1);
+% vector = log(vector);
+% figure
+% histogram(vector,40)
+% axis([-40 5 0 2800])
+% title('adaptive bromwich distribution of errors')
+% xlabel('log error')
+% ylabel('count')
+% print('NAB_error_dist','-djpeg')
 
-figure
-plot(Theta,'.','MarkerSize',8)
-axis([-1.5 1.5 -1.5 1.5])
-xlabel('x')
-ylabel('iy')
-title('equidistant partition of unit circle')
 
 
 
-
+% load('errorW1_100.mat')
+% error1 = errorW;
+% load('errorW111_153.mat')
+% error2 = errorW;
+% load('errorW153_235.mat')
+% error3 = errorW;
+% error_total = [error1;error2;error3];
+% vector = error_total(:,1:end-1);
+% vector = reshape(vector,225*57,1);
+% vector = log(vector);
+% figure
+% histogram(vector,40)
+% axis([-40 5 0 2800])
+% title('Weeks 0 distribution of errors')
+% xlabel('log error')
+% ylabel('count')
+% print('Weeks_0_error_dist','-djpeg')
 
 
 

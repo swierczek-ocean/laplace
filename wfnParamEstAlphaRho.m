@@ -50,8 +50,10 @@ switch(SearchSwitch)
  
  case 3 %CPU local fminbnd
  
- alphaP = fminbnd('wfnNestedErrorAlphaRho',alphamin,alphamax,[0 tolalpha],FLaplace,TimeInput,NLag,rhomax,tolrho);
- rhoP = fminbnd('wfncpuErrorEstAlphaRho',0,rhomax,[0 tolrho],alphaP,FLaplace,TimeInput,NLag,0); %ErrorFlag=0->total error
+ options = optimset('TolX',tolalpha);    
+ alphaP = fminbnd('wfnNestedErrorAlphaRho',alphamin,alphamax,options,FLaplace,TimeInput,NLag,rhomax,tolrho);
+ options = optimset('TolX',tolrho);
+ rhoP = fminbnd('wfncpuErrorEstAlphaRho',0,rhomax,options,alphaP,FLaplace,TimeInput,NLag,0); %ErrorFlag=0->total error
 
  case 4 %global grid of alpha,rho
  

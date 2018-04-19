@@ -14,12 +14,12 @@ b = 2;
 eps = pi;
 Sings = makesings(a,b);
 t = 1.1:0.25:25.1;
-length = size(t,2);
+timelength = size(t,2);
 ub = 100;
 sw = 2;
 start = 111;
 num_test = 125;
-error2 = zeros(num_test,length+1);
+error2 = zeros(num_test,timelength+1);
 %%
 
 %% tests
@@ -33,8 +33,8 @@ end
 %%
 
 %% error summary
-fprintf('max relative error = %g percent\n',100*max(reshape(error2(:,1:end-1),num_test*length,1)))
-fprintf('mean relative error = %g percent\n',100*mean(reshape(error2(:,1:end-1),num_test*length,1)))
+fprintf('max relative error = %g percent\n',100*max(reshape(error2(:,1:end-1),num_test*timelength,1)))
+fprintf('mean relative error = %g percent\n',100*mean(reshape(error2(:,1:end-1),num_test*timelength,1)))
 %%
 
 error_summary2 = [mean(error1(:,1:end),2),error1(:,end)];

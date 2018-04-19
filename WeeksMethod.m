@@ -193,10 +193,10 @@ tolb = [1.0 0.5 0.25 0.125]; %grid resolution
 %Define default (rho, alpha) space search parameters
 alphamax = 5.0;
 alphamin = -5.0; %-1.0*alphamax;
-tolalpha = [0.1 0.05 0.025]; %grid resolution
+tolalpha = [0.2 0.1 0.05 0.025]; %grid resolution
 
 rhomax = 2*alphamax;
-tolrho = [0.1 0.05 0.025]; %grid resolution
+tolrho = [0.2 0.1 0.05 0.025]; %grid resolution
 
 %Define the default number of Laguerre expansion coefficients
 %NLag = [32 64 128 256 512]; %very large number of coefficients is fine for
@@ -218,109 +218,109 @@ end %switch
 
 %%%Main Search
 for tidx=1:Ntimes
- %The results will increase with accuracy until the tolerance is met   
- for ntolidx=1:length(tols)
-  for nLagidx=1:length(NLag)
-   %tempindices = [tidx,ntolidx,nLagidx]
-   
-   if(SearchSwitch==0 || SearchSwitch==1) %sigma,b searches
-   
-    [testInvertf,testsigmaP,testbP,testRelTotal,testAbsTotal,testAbsTruncate,testAbsRoundoff,testLaguerreCoef]=...  
-    wfnWeeksCoreSigmab(FLaplace,Timevec(tidx),NLag(nLagidx),sigmin,sigmax,bmax,SearchSwitch,tols(ntolidx),tolb(ntolidx));
-
-    Invertf(tidx)          = testInvertf;
-    RelTotalError(tidx)    = testRelTotal;
-    AbsTotalError(tidx)    = testAbsTotal;
-    AbsTruncateError(tidx) = testAbsTruncate;
-    AbsRoundoffError(tidx) = testAbsRoundoff;
-    LaguerreCoef{tidx}     = testLaguerreCoef;
-
-    sigmaP(tidx) = testsigmaP;
-    bP(tidx)     = testbP;
-    
-    alphaP(tidx) = bP(tidx) - sigmaP(tidx);
-    rhoP(tidx)   = 2.0*bP(tidx);
+    %The results will increase with accuracy until the tolerance is met
+    for ntolidx=1:length(tols)
+        for nLagidx=1:length(NLag)
+            %tempindices = [tidx,ntolidx,nLagidx]
+            
+            if(SearchSwitch==0 || SearchSwitch==1) %sigma,b searches
+                
+                [testInvertf,testsigmaP,testbP,testRelTotal,testAbsTotal,testAbsTruncate,testAbsRoundoff,testLaguerreCoef]=...
+                    wfnWeeksCoreSigmab(FLaplace,Timevec(tidx),NLag(nLagidx),sigmin,sigmax,bmax,SearchSwitch,tols(ntolidx),tolb(ntolidx));
+                
+                Invertf(tidx)          = testInvertf;
+                RelTotalError(tidx)    = testRelTotal;
+                AbsTotalError(tidx)    = testAbsTotal;
+                AbsTruncateError(tidx) = testAbsTruncate;
+                AbsRoundoffError(tidx) = testAbsRoundoff;
+                LaguerreCoef{tidx}     = testLaguerreCoef;
+                
+                sigmaP(tidx) = testsigmaP;
+                bP(tidx)     = testbP;
+                
+                alphaP(tidx) = bP(tidx) - sigmaP(tidx);
+                rhoP(tidx)   = 2.0*bP(tidx);
+                
+                if testRelTotal<RelErrorTol(tidx)
+                    ToleranceMetFlag(tidx) = 1;
+                    break;
+                else %if(RelErrorTol(tidx)<testRelTotal) %update
+                    ToleranceMetFlag(tidx) = 0;
+                end
+                
+            elseif(SearchSwitch==2 || SearchSwitch==3 || SearchSwitch==4) %SearchSwitch alpha, rho search
+                
+                [testInvertf,testalphaP,testrhoP,testRelTotal,testAbsTotal,testAbsTruncate,testAbsRoundoff,testLaguerreCoef]=...
+                    wfnWeeksCoreAlphaRho(FLaplace,Timevec(tidx),NLag(nLagidx),alphamin,alphamax,rhomax,SearchSwitch,tolalpha(ntolidx),tolrho(ntolidx));
+                
+                Invertf(tidx)          = testInvertf;
+                RelTotalError(tidx)    = testRelTotal;
+                AbsTotalError(tidx)    = testAbsTotal;
+                AbsTruncateError(tidx) = testAbsTruncate;
+                AbsRoundoffError(tidx) = testAbsRoundoff;
+                LaguerreCoef{tidx}     = testLaguerreCoef;
+                
+                alphaP(tidx) = testalphaP;
+                rhoP(tidx)   = testrhoP;
+                
+                sigmaP(tidx) = 0.5*rhoP(tidx) - alphaP(tidx);
+                bP(tidx)     = 0.5*rhoP(tidx);
+                
+                if testRelTotal<RelErrorTol(tidx)
+                    ToleranceMetFlag(tidx) = 1;
+                    break;
+                else %if(RelErrorTol(tidx)<testRelTotal) %update
+                    ToleranceMetFlag(tidx) = 0;
+                end
+                
+            elseif(SearchSwitch==5) %search alpha with adaptive integration
+                %Unlike the other methods, time is not considered in the optimization
+                %function used for determining the optimal parameter
+                
+                disp('Selected Method: search alpha with adaptive integration');
+                if(tidx==1)
+                    alphamin = -50.0;
+                    alphamax = 5%0.5;
+                    tolalpha = 0.01;
+                    
+                    Fofs = @(s)eval(FLaplace); %convert from a string to a function handle
+                    [testInvertf,testalphaP,testrhoP,testRelTotal,testAbsTotal,testAbsTruncate,testAbsRoundoff,testLaguerreCoef]=...
+                        wfnWeeksCoreAdaptiveIntegrate(Fofs,Timevec(tidx),NLag(nLagidx),alphamin,alphamax,tolalpha);
+                else
+                    %just use the values
+                    [testInvertf,testalphaP,testrhoP,testRelTotal,testAbsTotal,testAbsTruncate,testAbsRoundoff,testLaguerreCoef]=...
+                        wfnWeeksCoreAdaptiveIntegrate(Fofs,Timevec(tidx),NLag(nLagidx),testalphaP);
+                end
+                
+                Invertf(tidx)          = testInvertf;
+                RelTotalError(tidx)    = testRelTotal;
+                AbsTotalError(tidx)    = testAbsTotal;
+                AbsTruncateError(tidx) = testAbsTruncate;
+                AbsRoundoffError(tidx) = testAbsRoundoff;
+                LaguerreCoef{tidx}     = testLaguerreCoef;
+                
+                alphaP(tidx) = testalphaP;
+                rhoP(tidx)   = testrhoP;
+                
+                sigmaP(tidx) = 0.5*rhoP(tidx) - alphaP(tidx);
+                bP(tidx)     = 0.5*rhoP(tidx);
+                
+                if testRelTotal<RelErrorTol(tidx)
+                    ToleranceMetFlag(tidx) = 1;
+                    break;
+                else %if(RelErrorTol(tidx)<testRelTotal) %update
+                    ToleranceMetFlag(tidx) = 0;
+                end
+                
+            else
+                error([mfilename,':SearchSwitch'],'Incorrect choice of the search switch.');
+                
+            end %SearchSwitch
+        end %nLagidx
         
-    if testRelTotal<RelErrorTol(tidx)
-     ToleranceMetFlag(tidx) = 1;
-     break;
-    else %if(RelErrorTol(tidx)<testRelTotal) %update
-     ToleranceMetFlag(tidx) = 0;
-    end
-    
-   elseif(SearchSwitch==2 || SearchSwitch==3 || SearchSwitch==4) %SearchSwitch alpha, rho search
-   
-    [testInvertf,testalphaP,testrhoP,testRelTotal,testAbsTotal,testAbsTruncate,testAbsRoundoff,testLaguerreCoef]=...  
-    wfnWeeksCoreAlphaRho(FLaplace,Timevec(tidx),NLag(nLagidx),alphamin,alphamax,rhomax,SearchSwitch,tolalpha(ntolidx),tolrho(ntolidx));
-
-    Invertf(tidx)          = testInvertf;    
-    RelTotalError(tidx)    = testRelTotal;
-    AbsTotalError(tidx)    = testAbsTotal;
-    AbsTruncateError(tidx) = testAbsTruncate;
-    AbsRoundoffError(tidx) = testAbsRoundoff;
-    LaguerreCoef{tidx}     = testLaguerreCoef;
-    
-    alphaP(tidx) = testalphaP;
-    rhoP(tidx)   = testrhoP;
-
-    sigmaP(tidx) = 0.5*rhoP(tidx) - alphaP(tidx);
-    bP(tidx)     = 0.5*rhoP(tidx);
-    
-    if testRelTotal<RelErrorTol(tidx)
-     ToleranceMetFlag(tidx) = 1;
-     break;
-    else %if(RelErrorTol(tidx)<testRelTotal) %update
-     ToleranceMetFlag(tidx) = 0;
-    end
-   
-   elseif(SearchSwitch==5) %search alpha with adaptive integration
-    %Unlike the other methods, time is not considered in the optimization
-    %function used for determining the optimal parameter
-       
-    disp('Selected Method: search alpha with adaptive integration');
-    if(tidx==1)
-     alphamin = -50.0;
-     alphamax = 5%0.5;
-     tolalpha = 0.01;
-    
-     Fofs = @(s)eval(FLaplace); %convert from a string to a function handle
-     [testInvertf,testalphaP,testrhoP,testRelTotal,testAbsTotal,testAbsTruncate,testAbsRoundoff,testLaguerreCoef]=...  
-     wfnWeeksCoreAdaptiveIntegrate(Fofs,Timevec(tidx),NLag(nLagidx),alphamin,alphamax,tolalpha);
-    else
-     %just use the values 
-     [testInvertf,testalphaP,testrhoP,testRelTotal,testAbsTotal,testAbsTruncate,testAbsRoundoff,testLaguerreCoef]=...  
-     wfnWeeksCoreAdaptiveIntegrate(Fofs,Timevec(tidx),NLag(nLagidx),testalphaP);
-    end
-    
-    Invertf(tidx)          = testInvertf;    
-    RelTotalError(tidx)    = testRelTotal;
-    AbsTotalError(tidx)    = testAbsTotal;
-    AbsTruncateError(tidx) = testAbsTruncate;
-    AbsRoundoffError(tidx) = testAbsRoundoff;
-    LaguerreCoef{tidx}     = testLaguerreCoef;
-    
-    alphaP(tidx) = testalphaP;
-    rhoP(tidx)   = testrhoP;
-
-    sigmaP(tidx) = 0.5*rhoP(tidx) - alphaP(tidx);
-    bP(tidx)     = 0.5*rhoP(tidx);
-    
-    if testRelTotal<RelErrorTol(tidx)
-     ToleranceMetFlag(tidx) = 1;
-     break;
-    else %if(RelErrorTol(tidx)<testRelTotal) %update
-     ToleranceMetFlag(tidx) = 0;
-    end
-       
-   else
-    error([mfilename,':SearchSwitch'],'Incorrect choice of the search switch.');
-    
-   end %SearchSwitch 
-  end %nLagidx
-  
-  if(ToleranceMetFlag(tidx)==1), break; end %out to next time index
- end %ntolidx
-end %tidx    
+        if(ToleranceMetFlag(tidx)==1), break; end %out to next time index
+    end %ntolidx
+end %tidx
 
 %% Summarize the outputs into the appropriate format
 if nargout==4 

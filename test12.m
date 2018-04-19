@@ -15,14 +15,14 @@ b = 5;
 eps = 0.5;
 Sings = makesings(a,b);
 t = 1.15:0.25:15.15;
-length = size(t,2);
+timelength = size(t,2);
 ub = 100;
 sw = 2;
 start = 1;
 num_test = 100;
-errorW = zeros(num_test,length+1);
-Weeks = zeros(1,length);
-RET = 0.05*ones(1,length);
+errorW = zeros(num_test,timelength+1);
+Weeks = zeros(1,timelength);
+RET = 0.02*ones(1,timelength);
 %%
 
 %% tests
@@ -41,8 +41,8 @@ end
 %%
 
 %% error summary
-fprintf('max relative error = %g percent\n',100*max(reshape(errorW(:,1:end-1),num_test*length,1)))
-fprintf('mean relative error = %g percent\n',100*mean(reshape(errorW(:,1:end-1),num_test*length,1)))
+fprintf('max relative error = %g percent\n',100*max(reshape(errorW(:,1:end-1),num_test*timelength,1)))
+fprintf('mean relative error = %g percent\n',100*mean(reshape(errorW(:,1:end-1),num_test*timelength,1)))
 %%
 
 [mean(errorW(:,1:end),2),errorW(:,end)]

@@ -53,10 +53,10 @@ set(0,'DefaultFigureVisible','on')
 % error_total = [error1;error2;error3];
 % vector = error_total(:,1:end-1);
 % vector = reshape(vector,225*57,1);
-% vector = log(vector);
+% vector = log10(vector);
 % figure
-% histogram(vector,25)
-% axis([-40 5 0 3200])
+% histogram(vector,20)
+% axis([-18 18 0 5000])
 % title('adaptive bromwich distribution of errors')
 % xlabel('log error')
 % ylabel('count')
@@ -74,10 +74,10 @@ set(0,'DefaultFigureVisible','on')
 % error_total = [error1;error2;error3];
 % vector = error_total(:,1:end-1);
 % vector = reshape(vector,225*57,1);
-% vector = log(vector);
+% vector = log10(vector);
 % figure
 % histogram(vector,40)
-% axis([-40 5 0 3200])
+% axis([-18 18 0 5000])
 % title('Weeks 0 distribution of errors')
 % xlabel('log error')
 % ylabel('count')

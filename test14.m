@@ -11,18 +11,18 @@ colors
 %% setting up time values and shifts
 global a, global b, global eps
 a = 3;
-b = 5;
+b = 1;
 eps = 0.5;
 Sings = makesings(a,b);
-t1 = 1.15:0.25:15.15;
-t2 = 1.2:0.25:15.2;
-t3 = 1.1:0.25:15.1;
-t = 1.1:0.05:15.2;
+t1 = 1.2:0.5:15.2;
+t2 = 1.3:0.5:15.3;
+t3 = 1.1:0.5:15.1;
+t = 1.1:0.1:15.2;
 timelength = size(t1,2);
 ub = 100;
 sw = 0;
-start = 1;
-num_test = 100;
+start = 173;
+num_test = 11;
 NAB = zeros(1,timelength);
 Weeks = zeros(1,timelength);
 SWeeks = zeros(1,timelength);

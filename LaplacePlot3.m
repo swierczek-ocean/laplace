@@ -5,27 +5,27 @@ Q = sort(True);
 Z = sort(Weeks);
 W = sort(SWeeks);
 N = sort(NAB);
-ps = 12;
-ss = 6;
-Nabc = 16;
-Wkc = 14;
+ps = 14;
+ss = 5.5;
+Nabc = 34;
+Wkc = 16;
 Swkc = 12;
 
 if(Q(end)-Q(1)>1e5)&&(Q(1)>0)&&(Z(1)>0)&&(W(1)>0)&&(N(1)>0)
     
     figure
-    h1 = semilogy(T,True,'LineWidth',2.75,'Color',Color(:,35));
+    h1 = semilogy(T,True,'LineWidth',3,'Color',Color(:,35));
     hold on
     h2 = semilogy(t1,real(Weeks),'.','MarkerSize',ps,'Color',Color(:,Wkc));
-    semilogy(t1,real(Weeks),'*','MarkerSize',ss,'Color',Color(:,Wkc));
+    semilogy(t1,real(Weeks),'v','MarkerSize',ss,'Color',Color(:,Wkc));
     h3 = semilogy(t2,real(SWeeks),'.','MarkerSize',ps,'Color',Color(:,Swkc));
-    semilogy(t2,real(SWeeks),'*','MarkerSize',ss,'Color',Color(:,Swkc));    
+    semilogy(t2,real(SWeeks),'o','MarkerSize',ss,'Color',Color(:,Swkc));    
     h4 = semilogy(t3,real(NAB),'.','MarkerSize',ps,'Color',Color(:,Nabc));
-    semilogy(t3,real(NAB),'*','MarkerSize',ss,'Color',Color(:,Nabc));    
+    semilogy(t3,real(NAB),'d','MarkerSize',ss,'Color',Color(:,Nabc));    
     title(['L',num2str(char),' a=',num2str(a),' b=',num2str(b)])
     xlabel('time')
     ylabel('f(t)')
-    legend([h1(1),h2(1),h3(1),h4(1)],'True f(t)','Weeks','Shift Weeks','adaptive')
+    legend([h1(1),h2(1),h3(1),h4(1)],'True f(t)','Weeks','Shift Weeks','adaptive','Location','northwest')
     print(['L',num2str(char),' a=',num2str(a),' b=',num2str(b),'_true_vs_ests'],'-djpeg')
     hold off
     
@@ -35,15 +35,15 @@ else
     h1 = plot(T,True,'LineWidth',2.75,'Color',Color(:,35));
     hold on
     h2 = plot(t1,real(Weeks),'.','MarkerSize',ps,'Color',Color(:,Wkc));
-    plot(t1,real(Weeks),'*','MarkerSize',ss,'Color',Color(:,Wkc));
+    plot(t1,real(Weeks),'v','MarkerSize',ss,'Color',Color(:,Wkc));
     h3 = plot(t2,real(SWeeks),'.','MarkerSize',ps,'Color',Color(:,Swkc));
-    plot(t2,real(SWeeks),'*','MarkerSize',ss,'Color',Color(:,Swkc));    
+    plot(t2,real(SWeeks),'o','MarkerSize',ss,'Color',Color(:,Swkc));    
     h4 = plot(t3,real(NAB),'.','MarkerSize',ps,'Color',Color(:,Nabc));
-    plot(t3,real(NAB),'*','MarkerSize',ss,'Color',Color(:,Nabc));    
+    plot(t3,real(NAB),'d','MarkerSize',ss,'Color',Color(:,Nabc));    
     title(['L',num2str(char),' a=',num2str(a),' b=',num2str(b)])
     xlabel('time')
     ylabel('f(t)')
-    legend([h1(1),h2(1),h3(1),h4(1)],'True f(t)','Weeks','Shift Weeks','adaptive')
+    legend([h1(1),h2(1),h3(1),h4(1)],'True f(t)','Weeks','Shift Weeks','adaptive','Location','northwest')
     print(['L',num2str(char),' a=',num2str(a),' b=',num2str(b),'_true_vs_ests'],'-djpeg')
     hold off
     
@@ -68,15 +68,15 @@ SWeeksRelError(ind) = abs(SWeeks(ind)-True3(ind));
 figure
 h1 = semilogy(t1,real(WeeksRelError),'.','MarkerSize',ps,'Color',Color(:,Wkc));
 hold on
-semilogy(t1,real(WeeksRelError),'*','MarkerSize',ss,'Color',Color(:,Wkc))
+semilogy(t1,real(WeeksRelError),'v','MarkerSize',ss,'Color',Color(:,Wkc))
 h2 = semilogy(t2,real(SWeeksRelError),'.','MarkerSize',ps,'Color',Color(:,Swkc));
-semilogy(t2,real(SWeeksRelError),'*','MarkerSize',ss,'Color',Color(:,Swkc))
+semilogy(t2,real(SWeeksRelError),'o','MarkerSize',ss,'Color',Color(:,Swkc))
 h3 = semilogy(t3,real(NABRelError),'.','MarkerSize',ps,'Color',Color(:,Nabc));
-semilogy(t3,real(NABRelError),'*','MarkerSize',ss,'Color',Color(:,Nabc))
+semilogy(t3,real(NABRelError),'d','MarkerSize',ss,'Color',Color(:,Nabc))
 title(['L ',num2str(char),' a=',num2str(a),' b=',num2str(b),' error'])
 xlabel('time')
 ylabel('Relative error')
-legend([h1(1),h2(1),h3(1)],'Weeks','Shift Weeks','adaptive')
+legend([h1(1),h2(1),h3(1)],'Weeks','Shift Weeks','adaptive','Location','northwest')
 print(['L',num2str(char),' a=',num2str(a),' b=',num2str(b),'_x_error'],'-djpeg')
 hold off
 

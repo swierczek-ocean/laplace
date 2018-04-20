@@ -29,20 +29,14 @@ RET = 0.02*ones(1,timelength);
 for jj=1:num_test
     global ll
     ll = jj+start-1;
+    global hshift
+    hshift = Sings(ll,1);
     True = master_inverse_laplace_fcn(t,a,b,ll,eps);
-    fun2 = 'laplacefcn(s)';
-    Weeks = WeeksMethod(fun2,t,RET,sw);
-    errorW(jj,:) = [LaplacePlot2(True,real(Weeks),t,ll,a,b,sw),ll];
+    fun2 = 'laplacefcn1(s)';
+    SWeeks = WeeksMethod(fun2,t,RET,sw);
+    SWeeks = exp(hshift.*t).*SWeeks;
+    LaplacePlot4(True,SWeeks,t,ll,a,b,sw);
 end
 %%
-
-%% error summary
-fprintf('max relative error = %g percent\n',100*max(reshape(errorW(:,1:end-1),num_test*timelength,1)))
-fprintf('mean relative error = %g percent\n',100*mean(reshape(errorW(:,1:end-1),num_test*timelength,1)))
-%%
-
-[mean(errorW(:,1:end),2),errorW(:,end)]
-
-save errorW
 
 toc()

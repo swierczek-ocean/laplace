@@ -4,13 +4,13 @@ close all
 clear
 format long 
 tic()
-set(0,'DefaultFigureVisible','off')
+set(0,'DefaultFigureVisible','on')
 colors
 %%
 
 %% setting up time values and shifts
 a = 3;
-b = 5;
+b = 1;
 eps = 0.5;
 Sings = makesings(a,b);
 % t = 1.1:0.125:7.1;
@@ -18,8 +18,8 @@ t = 1.15:0.25:15.15;
 timelength = size(t,2);
 ub = 100;
 sw = 2;
-start = 153;
-num_test = 83;
+start = 143;
+num_test = 1;
 error = zeros(num_test,timelength+1);
 %%
 
